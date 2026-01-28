@@ -1,30 +1,8 @@
-# S'adresse à tous les robots
+# Robots.txt pour la Landing Page (foodmoov.com)
 User-agent: *
 
-# Autorise l'exploration de l'ensemble du site public
+# Autorise tout le contenu public
 Allow: /
 
-# --- Bloquer les pages privées, admin, et fonctionnelles ---
-Disallow: /admin/
-Disallow: /influencer/dashboard/
-Disallow: /influencer/request/
-Disallow: /mon-compte
-Disallow: /definir-pseudo
-Disallow: /onboarding-influenceur
-Disallow: /choix-role
-Disallow: /attente-email
-Disallow: /validation-en-cours
-Disallow: /compte-suspendu
-Disallow: /profil-en-attente
-
-# --- Bloquer les pages de formulaire pur (pas de contenu SEO) ---
-Disallow: /connexion
-Disallow: /inscription
-Disallow: /menu
-
-# --- Bloquer les pages de réinitialisation de mot de passe ---
-Disallow: /demande-reinitialisation
-Disallow: /reinitialiser-mot-de-passe
-
-# Indique à Google où se trouve le plan de votre site (SUR L'API)
-Sitemap: https://api.foodmoov.com/sitemap.xml
+# Sitemap de la landing
+Sitemap: https://foodmoov.com/sitemap.xml
