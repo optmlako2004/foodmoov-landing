@@ -1,0 +1,208 @@
+/* src/pages/RegisterPage.css */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: var(--background-light);
+  min-height: calc(100vh - 250px);
+}
+
+.register-form-wrapper {
+  background-color: var(--white);
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.register-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--dark-text);
+}
+
+.register-subtitle {
+  color: var(--body-text);
+  margin-bottom: 30px;
+}
+
+.register-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--background-light);
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* --- CORRECTION CRITIQUE : POLITIQUE DE CONFIDENTIALITÉ --- */
+.form-group.privacy-policy {
+  display: flex;
+  flex-direction: row; /* Force la ligne horizontale */
+  align-items: center; /* Centre verticalement */
+  gap: 10px;           /* Espace entre la case et le texte */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group.privacy-policy input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0; /* Enlève les marges qui pourraient pousser la case */
+  flex-shrink: 0; /* Empêche la case d'être écrasée */
+  accent-color: var(--primary-color); /* Couleur orange quand coché */
+  cursor: pointer;
+}
+
+.form-group.privacy-policy label {
+  margin-bottom: 0;
+  font-weight: normal;
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  cursor: pointer;
+  text-align: left; /* Assure que le texte est aligné à gauche */
+}
+
+/* --- LIEN EN ORANGE --- */
+.form-group.privacy-policy a {
+  color: var(--primary-color); /* Utilise votre variable Orange */
+  text-decoration: none;
+  font-weight: 700; /* Un peu plus gras pour qu'on le voit bien */
+  transition: text-decoration 0.2s;
+}
+
+.form-group.privacy-policy a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton principal */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  /* Couleur ORANGE par défaut */
+  background-color: var(--primary-color);
+  color: var(--dark-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style Désactivé (Orange atténué quand le formulaire n'est pas rempli) */
+.submit-button:disabled {
+  background-color: var(--primary-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: #666;
+}
+
+/* Critères Mot de passe */
+.password-criteria-box {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
+}
+
+.criteria-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.password-criteria-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.password-criteria-box li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.password-criteria-box li.met { color: #2e7d32; font-weight: 500; }
+.password-criteria-box li.unmet { color: #888; }
+
+.password-success-msg {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #c8e6c9;
+}
+
+.password-mismatch-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.password-match-success {
+  color: #2e7d32;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}

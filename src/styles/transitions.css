@@ -1,0 +1,268 @@
+/* src/styles/transitions.css */
+
+/* ================================
+   TRANSITIONS DE PAGE
+   ================================ */
+
+/* Animation d'entrée de page */
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de sortie */
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Appliquer à toutes les pages */
+.page-enter {
+  animation: page-fade-in 0.3s ease-out forwards;
+}
+
+/* ================================
+   MICRO-INTERACTIONS BOUTONS
+   ================================ */
+
+/* Effet de rebond au clic */
+@keyframes button-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Effet ripple */
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Style de base pour tous les boutons interactifs */
+.cta-button,
+button[type="submit"],
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet au survol amélioré */
+.cta-button:hover,
+button[type="submit"]:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Effet au clic */
+.cta-button:active,
+button[type="submit"]:active,
+.btn:active {
+  animation: button-bounce 0.2s ease-out;
+  transform: translateY(0);
+}
+
+/* Ripple container */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+/* ================================
+   CARTES & ÉLÉMENTS INTERACTIFS
+   ================================ */
+
+/* Effet hover sur les cartes */
+.card,
+.city-card,
+.blog-card,
+.influencer-card,
+.partner-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover,
+.city-card:hover,
+.blog-card:hover,
+.influencer-card:hover,
+.partner-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   ANIMATIONS LIENS
+   ================================ */
+
+/* Underline animé sur les liens */
+.animated-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color, #fca922);
+  transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   FORMULAIRES
+   ================================ */
+
+/* Animation focus sur les inputs */
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 3px rgba(252, 169, 34, 0.2);
+}
+
+/* ================================
+   LOADING SPINNER MODERNE
+   ================================ */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(252, 169, 34, 0.2);
+  border-top-color: var(--primary-color, #fca922);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loading-spinner-small {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+/* Bouton en état de chargement */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ================================
+   APPARITION PROGRESSIVE
+   ================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.fade-in-scale {
+  animation: fade-in-scale 0.3s ease-out forwards;
+}
+
+/* Délais pour apparition séquentielle */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ================================
+   SCROLL SMOOTH
+   ================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   HEADER ANIMATION AU SCROLL
+   ================================ */
+
+.app-header {
+  transition: all 0.3s ease;
+}
+
+.app-header.scrolled {
+  padding: 5px 40px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-header.scrolled .logo {
+  height: 40px;
+}

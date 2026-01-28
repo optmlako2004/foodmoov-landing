@@ -1,0 +1,125 @@
+/* src/pages/MenuPage.css */
+
+.menu-page-container {
+  padding: 140px 40px 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+.menu-page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark-text);
+  margin-bottom: 50px;
+}
+
+/* Grille 2 colonnes parfaite */
+.menu-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;
+}
+
+/* Style de base des cartes */
+.menu-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 30px;
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Centrer le contenu pour l'esthétique */
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ================================================================== */
+/* ### MODIFIÉ (Couleur) ### */
+/* ================================================================== */
+/* Carte Influenceur (Style spécifique) */
+.menu-card.influencer-card {
+  background-color: #fff8ed; /* Fond orange clair */
+  border-color: #fddc9f; /* Bordure orange clair */
+}
+
+/* On s'assure que le h2 hérite de la couleur de base */
+.menu-card.influencer-card h2 {
+  color: var(--primary-hover); /* Couleur orange foncée pour le titre */
+}
+
+/* Carte Contact (prend toute la largeur) */
+.menu-card.contact-card {
+  grid-column: span 2;
+}
+/* ================================================================== */
+
+
+.menu-card h2 {
+  font-size: 1.8rem;
+  color: var(--dark-text);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.menu-card p {
+  font-size: 1rem;
+  color: var(--body-text);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+/* Boutons */
+.menu-card-button {
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block; /* Important pour le centrage */
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: fit-content; /* Largeur adaptée au texte */
+  margin: 0 auto; /* Centrer le bouton */
+}
+
+.menu-card-button.primary {
+  background-color: var(--primary-color);
+  color: var(--dark-text);
+}
+.menu-card-button.primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.menu-card-button.secondary {
+  background-color: var(--white);
+  color: var(--dark-text);
+  border-color: #ddd;
+}
+.menu-card-button.secondary:hover {
+  background-color: var(--dark-text);
+  color: var(--white);
+  border-color: var(--dark-text);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-page-container { padding-top: 120px; }
+  .menu-page-grid { grid-template-columns: 1fr; } /* 1 colonne sur mobile */
+  .menu-page-title { font-size: 2rem; }
+  .menu-card { padding: 25px; }
+  
+  /* Sur mobile, la carte Contact ne prend plus 2 colonnes */
+  .menu-card.contact-card { grid-column: span 1; }
+}

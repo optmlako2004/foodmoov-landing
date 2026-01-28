@@ -1,0 +1,455 @@
+/* src/pages/InfluencerPage.css */
+
+/* --- Section Héros --- */
+.influencer-hero {
+  padding: 140px 40px 60px 40px; /* 80px header + 60px padding */
+  text-align: center;
+  background-color: var(--background-light); /* Fond clair */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.influencer-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.influencer-hero p {
+  font-size: 1.3rem;
+  color: var(--body-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Section "Comment ça marche" --- */
+.how-it-works-section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.how-it-works-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 60px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  padding: 30px;
+  border-radius: 12px;
+  background-color: var(--white);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.step-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  font-size: 1.5rem;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+/* --- Section Grille (Formulaire + Conditions) --- */
+.influencer-grid-section {
+  padding: 80px 40px;
+  background-color: var(--background-light);
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Formulaire large (2) | Conditions (1) */
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* --- Section Formulaire --- */
+.form-section {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  position: relative; /* Important pour l'overlay */
+  overflow: hidden;
+}
+
+.form-section h3 {
+  font-size: 1.8rem;
+  color: var(--dark-text);
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --- OVERLAY DE BLOCAGE (Design amélioré) --- */
+.auth-lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre verticalement */
+  align-items: center;
+  z-index: 10;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.90); /* Fond opaque pour bien cacher */
+  backdrop-filter: blur(4px); /* Effet de flou derrière */
+}
+
+.auth-lock-overlay h4 {
+  font-size: 1.6rem;
+  color: var(--dark-text);
+  margin: 20px 0 10px 0;
+  font-weight: 700;
+}
+
+.auth-lock-overlay p {
+  color: var(--body-text);
+  margin-bottom: 25px;
+  max-width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Style spécifique pour le bouton dans l'overlay */
+.auth-lock-overlay .submit-button {
+    width: auto; /* Pas pleine largeur */
+    padding: 12px 35px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-lock-overlay .submit-button:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* Effet de flou sur le formulaire en dessous */
+.influencer-form.blurred {
+  filter: blur(6px);
+  pointer-events: none;
+  opacity: 0.3;
+  user-select: none;
+}
+
+/* Styles des champs */
+.influencer-form .form-group {
+  margin-bottom: 20px;
+}
+
+.influencer-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.influencer-form .form-group input[type="text"],
+.influencer-form .form-group input[type="email"],
+.influencer-form .form-group input[type="tel"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--background-light);
+  transition: border-color 0.2s ease;
+}
+
+.influencer-form .form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.influencer-form .privacy-policy {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.influencer-form .privacy-policy input[type="checkbox"] {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.influencer-form .privacy-policy label {
+  margin-bottom: 0;
+  font-weight: normal;
+  color: var(--body-text);
+  font-size: 0.9rem;
+}
+
+.influencer-form .submit-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: var(--dark-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.influencer-form .submit-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+}
+
+.influencer-form .submit-button:disabled {
+  background-color: #fbdca7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Section Conditions (À Droite) --- */
+.conditions-section {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 100px;
+}
+
+.conditions-section h3 {
+  font-size: 1.5rem;
+  color: var(--dark-text);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.conditions-section p {
+  font-size: 1rem;
+  color: var(--body-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.conditions-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conditions-section li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.conditions-section .check-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.conditions-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.conditions-footer p { margin: 0; }
+.conditions-footer a { color: var(--primary-color); font-weight: 600; text-decoration: none; }
+.conditions-footer a:hover { text-decoration: underline; }
+
+/* --- STYLES RÉSEAUX SOCIAUX --- */
+.networks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.network-helper {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.network-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.add-network-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  background: #fff6e5;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.add-network-btn:hover {
+  background: #ffe9bf;
+}
+
+.network-select-wrapper select {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s;
+}
+
+.network-select-wrapper select:hover {
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+.networks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.network-cell {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.network-icon-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 110px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+  border-right: 1px solid #eee;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.network-cell input {
+  border: none !important;
+  padding: 10px 0 !important;
+  background: transparent !important;
+  font-size: 0.95rem !important;
+}
+
+.network-cell input:focus { outline: none; }
+
+.delete-net-btn {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-net-btn:hover { background-color: #ffebee; }
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .influencer-grid-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .conditions-section {
+    position: static;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .influencer-hero h1 { font-size: 2.2rem; }
+  .influencer-hero p { font-size: 1.1rem; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .how-it-works-section, .influencer-grid-section { padding: 60px 20px; }
+  .form-section, .conditions-section { padding: 25px; }
+  
+  .network-cell {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+  .network-icon-label {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .delete-net-btn {
+    align-self: flex-end;
+    margin-top: -30px;
+  }
+}

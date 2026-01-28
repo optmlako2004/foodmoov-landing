@@ -1,0 +1,213 @@
+/* src/pages/SinglePostPage.css */
+
+.single-post-page {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* --- ZONE DU SLIDER --- */
+.post-hero-section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0; 
+}
+
+.custom-slider {
+  position: relative;
+}
+
+/* IMAGE DU SLIDER */
+.slider-image {
+  width: 100%;
+  height: auto; 
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* --- BOUTONS DE NAVIGATION DU SLIDER --- */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+  
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  color: #333;
+  opacity: 0;
+}
+
+.custom-slider:hover .slider-btn {
+  opacity: 1;
+}
+
+.slider-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
+/* POINTS (DOTS) */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.dot.active {
+  background-color: var(--primary-color);
+  transform: scale(1.4);
+  box-shadow: none;
+}
+
+/* --- EN-TÊTE DE L'ARTICLE --- */
+.post-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.post-category-orig {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.post-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #222;
+  line-height: 1.2;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* --- CONTENU DU TEXTE --- */
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+.post-content p {
+  margin-bottom: 25px;
+}
+
+.post-content h2, 
+.post-content h3 {
+  color: #111;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ======================================================= */
+/* === STYLE DES LIENS (CORRIGÉ) === */
+/* ======================================================= */
+
+/* 1. État par défaut (Sans souris) : Texte Orange + Souligné Orange */
+.post-content a {
+  color: var(--primary-color); /* Texte Orange */
+  font-weight: 700;
+  text-decoration: none; /* On gère le soulignement avec border pour l'animation */
+  border-bottom: 2px solid var(--primary-color); /* Trait Orange */
+  padding: 0 2px; /* Espacement minime */
+  transition: all 0.2s ease-in-out;
+}
+
+/* 2. État au survol (Avec souris) : Fond Orange + Texte Noir */
+.post-content a:hover {
+  background-color: var(--primary-color); /* Le fond devient Orange */
+  color: #000; /* Le texte devient Noir (contraste) */
+  border-bottom-color: transparent; /* On cache le trait */
+  border-radius: 4px; /* Coins arrondis "marqueur" */
+  padding: 2px 4px; /* On augmente un peu le padding pour l'effet bloc */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Petit relief */
+}
+
+/* --- BOUTON RETOUR AU BLOG (Style Pilule) --- */
+.back-to-blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 25px;
+  
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  color: #555;
+  
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-blog-link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(252, 169, 34, 0.3);
+  transform: translateY(-2px);
+}
+
+.post-loading, .post-not-found {
+  text-align: center;
+  padding: 80px;
+  font-size: 1.2rem;
+  color: #888;
+}
