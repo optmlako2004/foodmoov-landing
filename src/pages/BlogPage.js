@@ -1,40 +1,43 @@
 // src/pages/BlogPage.js
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { mockPosts } from "../data/mockPosts"; 
-import { api } from "../services/api"; // <-- IMPORT DU NOUVEAU SERVICE
+import { Link, useSearchParams } from "react-router-dom";
+import { mockPosts } from "../data/mockPosts";
+import { blogCategories, getCategoryById } from "../data/blogCategories";
+import { api } from "../services/api";
 import "./BlogPage.css";
 
 function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Recuperer la categorie depuis l'URL ou "all" par defaut
+  const selectedCategory = searchParams.get("categorie") || "all";
 
   useEffect(() => {
     async function fetchPosts() {
       let dbPosts = [];
       try {
-        // On récupère les articles de la BASE DE DONNÉES via le service centralisé
         dbPosts = await api.get("/blog/posts");
       } catch (error) {
-        console.error("Erreur serveur lors de la récupération des articles:", error);
-        // En cas d'erreur serveur, on peut décider de ne rien faire et de n'afficher que les mocks
+        console.error("Erreur serveur lors de la recuperation des articles:", error);
       } finally {
-        // On formate les articles MOCK pour qu'ils ressemblent à ceux de la DB
+        // Formater les articles MOCK pour qu'ils ressemblent a ceux de la DB
         const formattedMockPosts = mockPosts.map(mock => ({
           id: `mock-${mock.id}`,
           title: mock.title,
           slug: mock.slug,
-          category: 'Conseils',
+          category: mock.category || 'conseils',
           main_image_url: mock.image,
           excerpt: mock.excerpt,
           body: mock.content,
-          published_at: new Date(),
+          published_at: mock.date,
           first_name: mock.author,
           last_name: '',
           isMock: true
         }));
 
-        // On FUSIONNE les deux listes (articles de la DB et mocks)
+        // Fusionner les deux listes (articles de la DB et mocks)
         setPosts([...dbPosts, ...formattedMockPosts]);
         setLoading(false);
       }
@@ -42,6 +45,22 @@ function BlogPage() {
 
     fetchPosts();
   }, []);
+
+  // Filtrer les posts selon la categorie selectionnee
+  const filteredPosts = selectedCategory === "all"
+    ? posts
+    : posts.filter(post => {
+        const postCategory = (post.category || 'conseils').toLowerCase();
+        return postCategory === selectedCategory.toLowerCase();
+      });
+
+  const handleCategoryChange = (categoryId) => {
+    if (categoryId === "all") {
+      setSearchParams({});
+    } else {
+      setSearchParams({ categorie: categoryId });
+    }
+  };
 
   const getExcerpt = (post) => {
     if (post.excerpt) return post.excerpt;
@@ -51,21 +70,69 @@ function BlogPage() {
     return text.substring(0, 150) + "...";
   };
 
+  const getCategoryDisplayName = (categoryId) => {
+    const cat = getCategoryById(categoryId);
+    return cat ? cat.name : categoryId;
+  };
+
   if (loading) {
     return <div style={{textAlign: 'center', padding: '100px'}}>Chargement...</div>;
   }
 
   return (
     <div className="blog-page">
-      <title>Blog Street-Food - Conseils et Actualités | Foodmoov</title>
+      <title>Blog Street-Food - Conseils et Actualites | Foodmoov</title>
 
       <div className="blog-page-header">
         <h1>Le Blog de la Street-Food</h1>
-        <p>Retrouvez ici nos derniers articles, conseils et actualités sur le monde culinaire nomade.</p>
+        <p>Retrouvez ici nos derniers articles, conseils et actualites sur le monde culinaire nomade.</p>
       </div>
 
+      {/* Filtres par categorie */}
+      <div className="blog-categories">
+        <div className="blog-categories-inner">
+          {blogCategories.map((category) => (
+            <button
+              key={category.id}
+              className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              onClick={() => handleCategoryChange(category.id)}
+              style={{
+                '--category-color': category.color
+              }}
+            >
+              {category.name}
+              {selectedCategory === category.id && (
+                <span className="category-count">
+                  {category.id === "all" ? posts.length : filteredPosts.length}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Resultat du filtre */}
+      {selectedCategory !== "all" && (
+        <div className="blog-filter-info">
+          <p>
+            <strong>{filteredPosts.length}</strong> article{filteredPosts.length > 1 ? 's' : ''} dans la categorie <strong>{getCategoryDisplayName(selectedCategory)}</strong>
+          </p>
+          <button className="clear-filter" onClick={() => handleCategoryChange("all")}>
+            Voir tous les articles
+          </button>
+        </div>
+      )}
+
       <div className="blog-list">
-        {posts.map((post) => (
+        {filteredPosts.length === 0 ? (
+          <div className="no-posts">
+            <p>Aucun article dans cette categorie pour le moment.</p>
+            <button className="btn-primary" onClick={() => handleCategoryChange("all")}>
+              Voir tous les articles
+            </button>
+          </div>
+        ) : (
+          filteredPosts.map((post) => (
             <Link to={`/blog/${post.slug}`} key={post.id} className="post-card">
               <div className="post-card-image-wrapper">
                 {post.main_image_url ? (
@@ -74,20 +141,26 @@ function BlogPage() {
                   <div style={{width:'100%', height:'100%', background:'#f0f0f0'}}></div>
                 )}
               </div>
-              
+
               <div className="post-card-content">
-                <span className="post-category">{post.category || 'Conseils'}</span>
+                <span
+                  className="post-category"
+                  style={{ backgroundColor: getCategoryById(post.category)?.color || 'var(--primary-color)' }}
+                >
+                  {getCategoryDisplayName(post.category)}
+                </span>
                 <h2>{post.title}</h2>
                 <p className="excerpt">{getExcerpt(post)}</p>
                 <div className="post-card-footer">
                   <div className="author-info">
                     <p className="post-meta">Par {post.first_name} {post.last_name}</p>
                   </div>
-                  <span className="read-more-link">Lire la suite →</span>
+                  <span className="read-more-link">Lire la suite</span>
                 </div>
               </div>
             </Link>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

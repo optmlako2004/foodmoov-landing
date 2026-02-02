@@ -1,21 +1,4 @@
-// src/data/mockPosts.js
-import postImage1 from "../assets/post-image-1.jpg";
-import postImage2 from "../assets/post-image-2.jpg";
-import postImage3 from "../assets/post-image-3.jpg";
-
-export const mockPosts = [
-  // === CONSEILS ===
-  {
-    id: 1,
-    slug: "pourquoi-les-food-trucks-sont-a-la-mode",
-    title: "Pourquoi les Food Trucks sont plus populaires que jamais",
-    author: "Alice Martin",
-    date: "10 septembre 2025",
-    category: "conseils",
-    image: postImage1,
-    excerpt:
-      "Decouvrez les raisons du succes fulgurant de la street-food et comment les food trucks ont revolutionne notre facon de dejeuner...",
-    content: `
+const e="/assets/post-image-1-D3jm394A.jpg",s="/assets/post-image-2-CeSlAbxb.jpg",t="/assets/post-image-3-DBCp-5jb.jpg",n=[{id:1,slug:"pourquoi-les-food-trucks-sont-a-la-mode",title:"Pourquoi les Food Trucks sont plus populaires que jamais",author:"Alice Martin",date:"10 septembre 2025",category:"conseils",image:e,excerpt:"Decouvrez les raisons du succes fulgurant de la street-food et comment les food trucks ont revolutionne notre facon de dejeuner...",content:`
       <p>Il est midi, vous sortez du bureau ou vous vous baladez en ville, et l'envie d'un repas rapide mais savoureux se fait sentir. Il y a quelques annees, les options se limitaient souvent aux fast-foods traditionnels. Aujourd'hui, un univers de saveurs s'offre a vous, gare juste au coin de la rue. Les food trucks ont envahi nos villes, transformant le dejeuner sur le pouce en une veritable aventure culinaire. Mais qu'est-ce qui explique ce succes fulgurant ?</p>
 
       <h3>Une Revolution Culinaire sur Roues</h3>
@@ -29,19 +12,7 @@ export const mockPosts = [
 
       <h3>L'Avenir est Nomade</h3>
       <p>Flexibilite, qualite, diversite et convivialite : voila les ingredients du succes des food trucks. Ils repondent parfaitement aux nouvelles habitudes de consommation et a notre desir de manger bien, meme quand le temps presse.</p>
-    `,
-  },
-  {
-    id: 2,
-    slug: "top-5-specialites-street-food",
-    title: "Le Top 5 des specialites a tester absolument",
-    author: "Julien Lambert",
-    date: "5 septembre 2025",
-    category: "conseils",
-    image: postImage2,
-    excerpt:
-      "Du burger gourmet au pad thai, nous avons selectionne pour vous les incontournables de la cuisine de rue a ne pas manquer...",
-    content: `
+    `},{id:2,slug:"top-5-specialites-street-food",title:"Le Top 5 des specialites a tester absolument",author:"Julien Lambert",date:"5 septembre 2025",category:"conseils",image:s,excerpt:"Du burger gourmet au pad thai, nous avons selectionne pour vous les incontournables de la cuisine de rue a ne pas manquer...",content:`
       <p>L'univers de la street-food est un terrain de jeu infini pour les gourmands. Chaque camion offre une fenetre sur une culture, une saveur, une histoire. Face a cette diversite, que choisir ?</p>
 
       <h3>1. Le Burger Gourmet</h3>
@@ -58,19 +29,7 @@ export const mockPosts = [
 
       <h3>5. La Crepe Bretonne</h3>
       <p>Un classique francais qui se prete merveilleusement bien a la vente nomade. Simple, rapide et delicieux.</p>
-    `,
-  },
-  {
-    id: 3,
-    slug: "lancer-son-food-truck-les-etapes-cles",
-    title: "Lancer son propre Food Truck : Les etapes cles",
-    author: "Alice Martin",
-    date: "1 septembre 2025",
-    category: "foodtruckers",
-    image: postImage3,
-    excerpt:
-      "Vous revez de vous lancer dans l'aventure de la restauration mobile ? Voici un guide pratique pour vous aider a demarrer sur les chapeaux de roues...",
-    content: `
+    `},{id:3,slug:"lancer-son-food-truck-les-etapes-cles",title:"Lancer son propre Food Truck : Les etapes cles",author:"Alice Martin",date:"1 septembre 2025",category:"foodtruckers",image:t,excerpt:"Vous revez de vous lancer dans l'aventure de la restauration mobile ? Voici un guide pratique pour vous aider a demarrer sur les chapeaux de roues...",content:`
       <p>Le reve de lancer son propre restaurant est partage par de nombreux passionnes de cuisine. Le food truck apparait alors comme la solution ideale : plus flexible, moins couteux, il permet de tester son concept et d'aller a la rencontre de sa clientele.</p>
 
       <h3>1. Definir son Concept et son Business Plan</h3>
@@ -84,21 +43,7 @@ export const mockPosts = [
 
       <h3>4. Choisir ses Emplacements et Communiquer</h3>
       <p>L'avantage du food truck, c'est sa mobilite. Mais on ne s'installe pas n'importe ou ! Il faut obtenir des autorisations d'emplacement aupres des mairies.</p>
-    `,
-  },
-
-  // === ENTREPRISES ===
-  {
-    id: 4,
-    slug: "food-trucks-seminaires-entreprise",
-    title: "Food Trucks pour vos seminaires d'entreprise : Le guide complet",
-    author: "Sophie Durand",
-    date: "15 janvier 2026",
-    category: "entreprises",
-    image: postImage1,
-    excerpt:
-      "Decouvrez comment les food trucks peuvent transformer vos evenements corporate en experiences memorables pour vos collaborateurs...",
-    content: `
+    `},{id:4,slug:"food-trucks-seminaires-entreprise",title:"Food Trucks pour vos seminaires d'entreprise : Le guide complet",author:"Sophie Durand",date:"15 janvier 2026",category:"entreprises",image:e,excerpt:"Decouvrez comment les food trucks peuvent transformer vos evenements corporate en experiences memorables pour vos collaborateurs...",content:`
       <p>Les seminaires d'entreprise evoluent. Fini les buffets classiques et les traiteurs traditionnels. Place a une experience culinaire originale et conviviale : les food trucks. Cette solution innovante seduit de plus en plus les DRH et les organisateurs d'evenements.</p>
 
       <h3>Pourquoi choisir des Food Trucks pour votre seminaire ?</h3>
@@ -112,19 +57,7 @@ export const mockPosts = [
 
       <h3>Comment organiser votre evenement ?</h3>
       <p>Avec Foodmoov, la reservation est simplifiee. Notre plateforme vous permet de consulter les food trucks disponibles, de comparer les offres et de reserver directement en ligne. Nous gerons la logistique pour vous.</p>
-    `,
-  },
-  {
-    id: 5,
-    slug: "team-building-food-truck-experience",
-    title: "Team Building : Organisez une experience Food Truck unique",
-    author: "Marc Lefevre",
-    date: "10 janvier 2026",
-    category: "entreprises",
-    image: postImage2,
-    excerpt:
-      "Le team building autour de la gastronomie de rue : une activite originale qui renforce les liens entre vos equipes...",
-    content: `
+    `},{id:5,slug:"team-building-food-truck-experience",title:"Team Building : Organisez une experience Food Truck unique",author:"Marc Lefevre",date:"10 janvier 2026",category:"entreprises",image:s,excerpt:"Le team building autour de la gastronomie de rue : une activite originale qui renforce les liens entre vos equipes...",content:`
       <p>Le team building est essentiel pour la cohesion d'equipe. Et si vous sortiez des sentiers battus avec une experience culinaire immersive ? Les food trucks offrent un cadre ideal pour des activites de groupe originales et memorables.</p>
 
       <h3>L'Experience Food Truck Tour</h3>
@@ -143,19 +76,7 @@ export const mockPosts = [
 
       <h3>Comment reserver ?</h3>
       <p>Foodmoov propose des packages team building cles en main. Contactez notre equipe dediee aux entreprises pour un devis personnalise adapte a vos besoins et a votre budget.</p>
-    `,
-  },
-  {
-    id: 6,
-    slug: "pause-dejeuner-food-truck-bureaux",
-    title: "Food Trucks au bureau : Revolutionnez la pause dejeuner",
-    author: "Sophie Durand",
-    date: "5 janvier 2026",
-    category: "entreprises",
-    image: postImage3,
-    excerpt:
-      "Installez des food trucks regulierement sur votre site pour offrir a vos salaries une alternative gourmande et pratique...",
-    content: `
+    `},{id:6,slug:"pause-dejeuner-food-truck-bureaux",title:"Food Trucks au bureau : Revolutionnez la pause dejeuner",author:"Sophie Durand",date:"5 janvier 2026",category:"entreprises",image:t,excerpt:"Installez des food trucks regulierement sur votre site pour offrir a vos salaries une alternative gourmande et pratique...",content:`
       <p>La pause dejeuner est un moment cle de la journee de travail. Elle influence le bien-etre, la productivite et meme la retention des talents. De plus en plus d'entreprises font appel a des food trucks pour enrichir l'offre de restauration sur leur site.</p>
 
       <h3>Un avantage competitif pour recruter</h3>
@@ -174,21 +95,7 @@ export const mockPosts = [
 
       <h3>Tarification flexible</h3>
       <p>Deux modeles sont possibles : soit l'entreprise subventionne une partie du repas via des tickets, soit les salaries paient directement au prix du marche. Nous nous adaptons a votre politique RH.</p>
-    `,
-  },
-
-  // === COLLECTIVITES (Mairies) ===
-  {
-    id: 7,
-    slug: "food-trucks-fetes-communales",
-    title: "Food Trucks pour vos fetes communales : Guide pour les mairies",
-    author: "Jean-Pierre Moreau",
-    date: "20 janvier 2026",
-    category: "collectivites",
-    image: postImage1,
-    excerpt:
-      "Comment integrer des food trucks dans vos evenements municipaux pour offrir une experience culinaire de qualite a vos administres...",
-    content: `
+    `},{id:7,slug:"food-trucks-fetes-communales",title:"Food Trucks pour vos fetes communales : Guide pour les mairies",author:"Jean-Pierre Moreau",date:"20 janvier 2026",category:"collectivites",image:e,excerpt:"Comment integrer des food trucks dans vos evenements municipaux pour offrir une experience culinaire de qualite a vos administres...",content:`
       <p>Les fetes communales, kermesses et evenements municipaux sont des moments forts de la vie locale. L'offre de restauration y joue un role essentiel. Les food trucks apportent une alternative moderne et qualitative aux traditionnels stands de fete.</p>
 
       <h3>Pourquoi opter pour des Food Trucks ?</h3>
@@ -207,19 +114,7 @@ export const mockPosts = [
         <li>Accompagnement pour les autorisations de voirie</li>
         <li>Contact unique pour toute l'organisation</li>
       </ul>
-    `,
-  },
-  {
-    id: 8,
-    slug: "marches-food-trucks-collectivites",
-    title: "Creer un marche Food Truck dans votre commune",
-    author: "Marie Dupont",
-    date: "15 janvier 2026",
-    category: "collectivites",
-    image: postImage2,
-    excerpt:
-      "Comment mettre en place un rendez-vous regulier de food trucks pour dynamiser votre centre-ville et soutenir l'economie locale...",
-    content: `
+    `},{id:8,slug:"marches-food-trucks-collectivites",title:"Creer un marche Food Truck dans votre commune",author:"Marie Dupont",date:"15 janvier 2026",category:"collectivites",image:s,excerpt:"Comment mettre en place un rendez-vous regulier de food trucks pour dynamiser votre centre-ville et soutenir l'economie locale...",content:`
       <p>De nombreuses communes ont lance des marches de food trucks reguliers. Ces rendez-vous hebdomadaires ou mensuels dynamisent le centre-ville, attirent les habitants et soutiennent les entrepreneurs locaux. Voici comment lancer le votre.</p>
 
       <h3>Choisir le bon emplacement</h3>
@@ -236,19 +131,7 @@ export const mockPosts = [
 
       <h3>Accompagnement Foodmoov</h3>
       <p>Notre equipe accompagne les collectivites dans la mise en place de ces marches : selection des food truckers, planning de rotation, communication, gestion administrative. Contactez-nous pour un projet sur-mesure.</p>
-    `,
-  },
-  {
-    id: 9,
-    slug: "food-trucks-ecoles-cantines",
-    title: "Food Trucks et ecoles : Une alternative aux cantines traditionnelles",
-    author: "Jean-Pierre Moreau",
-    date: "10 janvier 2026",
-    category: "collectivites",
-    image: postImage3,
-    excerpt:
-      "Decouvrez comment certaines collectivites utilisent les food trucks pour completer ou remplacer l'offre de restauration scolaire...",
-    content: `
+    `},{id:9,slug:"food-trucks-ecoles-cantines",title:"Food Trucks et ecoles : Une alternative aux cantines traditionnelles",author:"Jean-Pierre Moreau",date:"10 janvier 2026",category:"collectivites",image:t,excerpt:"Decouvrez comment certaines collectivites utilisent les food trucks pour completer ou remplacer l'offre de restauration scolaire...",content:`
       <p>Face aux contraintes des cantines scolaires (capacite limitee, travaux, couts de renovation), certaines collectivites experimentent des solutions innovantes avec les food trucks. Voici un tour d'horizon de ces initiatives.</p>
 
       <h3>Un complement pour les pics d'affluence</h3>
@@ -265,21 +148,7 @@ export const mockPosts = [
 
       <h3>Retours d'experience</h3>
       <p>Les premieres experiences sont tres positives. Les eleves apprecient la diversite de l'offre et l'ambiance moins formelle qu'a la cantine. Les collectivites y voient une solution flexible et economique.</p>
-    `,
-  },
-
-  // === TENDANCES ===
-  {
-    id: 10,
-    slug: "tendances-food-trucks-2026",
-    title: "Les grandes tendances Food Truck de 2026",
-    author: "Julien Lambert",
-    date: "25 janvier 2026",
-    category: "tendances",
-    image: postImage1,
-    excerpt:
-      "Cuisine durable, tech et personnalisation : decouvrez ce qui va marquer le monde de la street-food cette annee...",
-    content: `
+    `},{id:10,slug:"tendances-food-trucks-2026",title:"Les grandes tendances Food Truck de 2026",author:"Julien Lambert",date:"25 janvier 2026",category:"tendances",image:e,excerpt:"Cuisine durable, tech et personnalisation : decouvrez ce qui va marquer le monde de la street-food cette annee...",content:`
       <p>Le monde du food truck ne cesse d'evoluer. Chaque annee apporte son lot d'innovations, de nouvelles saveurs et de concepts originaux. Voici les tendances qui vont marquer 2026.</p>
 
       <h3>La cuisine eco-responsable</h3>
@@ -296,6 +165,4 @@ export const mockPosts = [
 
       <h3>L'experience immersive</h3>
       <p>Le food truck devient un lieu d'experience. Decoration soignee, musique, histoire de la marque... Les entrepreneurs investissent dans l'ambiance pour creer des moments memorables.</p>
-    `,
-  },
-];
+    `}],o=[{id:"all",name:"Tous",slug:"tous",description:"Tous les articles du blog",color:"#333333"},{id:"conseils",name:"Conseils",slug:"conseils",description:"Astuces et guides pour les amateurs de street-food",color:"#fca922"},{id:"entreprises",name:"Entreprises",slug:"entreprises",description:"Solutions food truck pour les entreprises et evenements corporate",color:"#3b82f6"},{id:"collectivites",name:"Collectivites",slug:"collectivites",description:"Food trucks pour mairies, ecoles et evenements publics",color:"#10b981"},{id:"foodtruckers",name:"Food Truckers",slug:"foodtruckers",description:"Guides et ressources pour les professionnels du food truck",color:"#f59e0b"},{id:"tendances",name:"Tendances",slug:"tendances",description:"Les dernieres tendances de la street-food",color:"#ec4899"}],a=r=>o.find(i=>i.id===r)||o[0];export{o as b,a as g,n as m};

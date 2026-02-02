@@ -3,7 +3,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { mockPosts } from "../data/mockPosts";
-import { api } from "../services/api"; // <-- IMPORT DU NOUVEAU SERVICE
+import { blogCategories, getCategoryById } from "../data/blogCategories";
+import { api } from "../services/api";
 import "./SinglePostPage.css";
 
 function SinglePostPage() {
@@ -25,7 +26,7 @@ function SinglePostPage() {
           setPostData({
             post: {
               title: foundMock.title,
-              category: 'Conseils',
+              category: foundMock.category || 'conseils',
               published_at: new Date().toISOString(),
               first_name: foundMock.author, last_name: '',
               main_image_url: foundMock.image, body: foundMock.content
@@ -111,9 +112,15 @@ function SinglePostPage() {
         </div>
 
         <div className="post-header">
-            <span className="post-category-orig">{post.category || 'Conseils'}</span>
+            <Link
+              to={`/blog?categorie=${post.category || 'conseils'}`}
+              className="post-category-orig"
+              style={{ backgroundColor: getCategoryById(post.category)?.color || 'var(--primary-color)' }}
+            >
+              {getCategoryById(post.category)?.name || post.category || 'Conseils'}
+            </Link>
             <h1>{post.title}</h1>
-            <p className="post-meta">Par {post.first_name} {post.last_name} • {dateFormatted}</p>
+            <p className="post-meta">Par {post.first_name} {post.last_name} - {dateFormatted}</p>
         </div>
 
         <div className="post-content" dangerouslySetInnerHTML={{ __html: post.body }} />
