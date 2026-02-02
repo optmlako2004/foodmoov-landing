@@ -61,7 +61,8 @@
   border-radius: 30px;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .btn-primary:hover {
@@ -87,7 +88,7 @@
   font-weight: 600;
   font-size: 1rem;
   border: 2px solid var(--border-color);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .btn-secondary:hover {
@@ -133,7 +134,8 @@
   border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .benefit-card:hover {
@@ -292,19 +294,6 @@
   color: var(--white);
   margin-bottom: 16px;
   line-height: 1.2;
-  animation: subtlePulse 2.5s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .pro-cta-section p {

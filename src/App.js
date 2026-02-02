@@ -36,6 +36,10 @@ const SecurityPage = lazy(() => import("./pages/SecurityPage.js"));
 const ContactPage = lazy(() => import("./pages/ContactPage.js"));
 const MentionsLegalesPage = lazy(() => import("./pages/MentionsLegalesPage.js"));
 const FeaturesPage = lazy(() => import("./pages/FeaturesPage.js"));
+const BecomeInfluencerPage = lazy(() => import("./pages/BecomeInfluencerPage.js"));
+const InfluencersListPage = lazy(() => import("./pages/InfluencersListPage.js"));
+const InfluencerPage = lazy(() => import("./pages/InfluencerPage.js"));
+const MenuPage = lazy(() => import("./pages/MenuPage.js"));
 
 function AppContent() {
   const location = useLocation();
@@ -87,6 +91,14 @@ function AppContent() {
           <Route path="/aide" element={<HelpPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<SinglePostPage />} />
+
+          {/* Pages Influenceurs */}
+          <Route path="/devenir-influenceur" element={<BecomeInfluencerPage />} />
+          <Route path="/influenceurs" element={<InfluencersListPage />} />
+          <Route path="/demander-influenceur" element={<InfluencerPage />} />
+
+          {/* Page Menu (connexion/inscription) */}
+          <Route path="/menu" element={<MenuPage />} />
 
           {/* Fallback */}
           <Route path="*" element={<HomePage />} />

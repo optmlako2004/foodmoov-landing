@@ -49,8 +49,11 @@ function Footer() {
             <span>Foodmoov</span>
           </div>
           <a href={APP_URL} className="footer-cta-btn" target="_blank" rel="noopener noreferrer">
-            Accéder à l'app
+            Trouvez des foodtrucks
           </a>
+          <Link to="/devenir-partenaire" className="footer-cta-btn partner-btn">
+            Devenir Partenaire
+          </Link>
           {/* Réseaux sociaux */}
           <div className="footer-social">
             <a href="https://facebook.com/foodmoov" target="_blank" rel="noopener noreferrer">
@@ -76,7 +79,7 @@ function Footer() {
               <li><Link to="/fonctionnalites">Fonctionnalités</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/securite">Sécurité</Link></li>
-              <li><Link to="/professionnels">Pour les professionnels</Link></li>
+              <li><Link to="/professionnels">Je suis foodtrucker</Link></li>
             </ul>
           </div>
 

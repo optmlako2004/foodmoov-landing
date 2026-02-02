@@ -53,10 +53,10 @@ function HomePage() {
           </p>
           <div className="hero-actions">
             <a href={APP_URL} className="btn-primary" target="_blank" rel="noopener noreferrer">
-              Accéder à l'application <FaArrowRight />
+              Trouvez des foodtrucks <FaArrowRight />
             </a>
             <Link to="/professionnels" className="btn-secondary">
-              Je suis professionnel
+              Je suis foodtrucker
             </Link>
           </div>
         </div>
@@ -131,6 +131,15 @@ function HomePage() {
             </div>
             <h3>Influenceurs</h3>
             <p>Rejoignez notre réseau et profitez de dégustations offertes.</p>
+            <span className="feature-arrow">→</span>
+          </Link>
+
+          <Link to="/devenir-partenaire" className="feature-card">
+            <div className="feature-icon partner">
+              <FaHandshake />
+            </div>
+            <h3>Partenaires</h3>
+            <p>Devenez partenaire Foodmoov et développez votre visibilité.</p>
             <span className="feature-arrow">→</span>
           </Link>
         </div>

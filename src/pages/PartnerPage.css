@@ -6,7 +6,7 @@
 
 /* ===== HERO ===== */
 .partner-hero-landing {
-  background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
+  background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
   padding: 100px 24px;
   text-align: center;
 }
@@ -19,8 +19,8 @@
 .partner-badge {
   display: inline-block;
   padding: 8px 20px;
-  background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
-  color: #1565c0;
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  color: #e65100;
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 20px;
@@ -55,19 +55,20 @@
   align-items: center;
   gap: 10px;
   padding: 16px 32px;
-  background: #1976d2;
+  background: var(--primary-color);
   color: var(--white);
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .partner-landing .btn-primary:hover {
-  background: #1565c0;
+  background: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
 }
 
 .partner-landing .btn-primary.large {
@@ -87,7 +88,7 @@
   font-weight: 600;
   font-size: 1rem;
   border: 2px solid var(--border-color);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .partner-landing .btn-secondary:hover {
@@ -133,7 +134,8 @@
   border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .partner-benefits-section .benefit-card:hover {
@@ -145,13 +147,13 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px auto;
   font-size: 1.4rem;
-  color: #1976d2;
+  color: var(--primary-color);
 }
 
 .partner-benefits-section .benefit-card h3 {
@@ -194,7 +196,7 @@
   transform: translateX(-50%);
   width: 32px;
   height: 32px;
-  background: #1976d2;
+  background: var(--primary-color);
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -214,7 +216,7 @@
   justify-content: center;
   margin: 20px auto 20px auto;
   font-size: 1.8rem;
-  color: #1976d2;
+  color: var(--primary-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -236,7 +238,7 @@
 /* ===== STATS SECTION ===== */
 .partner-stats-section {
   padding: 60px 24px;
-  background: #1565c0;
+  background: #1a1a1a;
 }
 
 .partner-stats-section .stats-container {
@@ -258,7 +260,7 @@
 
 .partner-stats-section .stat-icon {
   font-size: 1.5rem;
-  color: #90caf9;
+  color: var(--primary-color);
   margin-bottom: 12px;
 }
 
@@ -277,7 +279,7 @@
 /* ===== CTA SECTION ===== */
 .partner-cta-section {
   padding: 100px 24px;
-  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
   text-align: center;
 }
 
@@ -292,19 +294,6 @@
   color: var(--white);
   margin-bottom: 16px;
   line-height: 1.2;
-  animation: subtlePulse 2.5s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .partner-cta-section p {
@@ -322,7 +311,7 @@
 
 .partner-cta-section .btn-primary {
   background: var(--white);
-  color: #1565c0;
+  color: var(--primary-color);
 }
 
 .partner-cta-section .btn-primary:hover {

@@ -104,10 +104,9 @@ export const AuthProvider = ({ children }) => {
     return `${APP_URL}/mon-compte`;
   };
 
-  // Fonction pour obtenir l'URL de connexion
-  const getLoginUrl = (redirectPath = '') => {
-    const redirect = redirectPath ? `?redirect=${encodeURIComponent(redirectPath)}` : '';
-    return `${APP_URL}/connexion${redirect}`;
+  // Fonction pour obtenir l'URL de connexion (redirige vers l'app directement)
+  const getLoginUrl = () => {
+    return APP_URL;
   };
 
   // Fonction pour obtenir l'URL d'inscription

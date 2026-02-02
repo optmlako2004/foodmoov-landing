@@ -19,7 +19,7 @@ import {
 } from "react-icons/fa";
 
 function Header() {
-  const { authState, getDashboardUrl, getLoginUrl } = useAuth();
+  const { authState, getDashboardUrl } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
@@ -123,10 +123,9 @@ function Header() {
               )}
             </div>
 
-            <NavLink to="/confidentialite" className="nav-link">Confidentialité</NavLink>
             <NavLink to="/aide" className="nav-link">Pages d'aide</NavLink>
             <NavLink to="/blog" className="nav-link">Blog</NavLink>
-            <NavLink to="/professionnels" className="nav-link">Pour les professionnels</NavLink>
+            <NavLink to="/professionnels" className="nav-link">Je suis foodtrucker</NavLink>
             <NavLink to="/applications" className="nav-link">Applications</NavLink>
           </nav>
 
@@ -137,9 +136,9 @@ function Header() {
                 Mon Espace
               </a>
             ) : (
-              <a href={getLoginUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">
+              <Link to="/menu" className="cta-btn login">
                 Se connecter
-              </a>
+              </Link>
             )}
             <Link to="/applications" className="cta-btn download">
               <FaDownload /> Télécharger
@@ -161,17 +160,16 @@ function Header() {
             <NavLink to="/fonctionnalites/professionnels" onClick={closeMenu}>Espace Pro</NavLink>
             <NavLink to="/fonctionnalites/influenceurs" onClick={closeMenu}>Influenceurs</NavLink>
             <NavLink to="/securite" onClick={closeMenu}>Sécurité</NavLink>
-            <NavLink to="/confidentialite" onClick={closeMenu}>Confidentialité</NavLink>
             <NavLink to="/aide" onClick={closeMenu}>Aide</NavLink>
             <NavLink to="/blog" onClick={closeMenu}>Blog</NavLink>
-            <NavLink to="/professionnels" onClick={closeMenu}>Pour les professionnels</NavLink>
+            <NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink>
             <NavLink to="/applications" onClick={closeMenu}>Applications</NavLink>
 
             <div className="mobile-cta">
               {authState.isAuthenticated ? (
                 <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Mon Espace</a>
               ) : (
-                <a href={getLoginUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Se connecter</a>
+                <Link to="/menu" className="cta-btn login" onClick={closeMenu}>Se connecter</Link>
               )}
               <Link to="/applications" className="cta-btn download" onClick={closeMenu}>
                 <FaDownload /> Télécharger

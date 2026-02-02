@@ -54,12 +54,25 @@
   border-radius: 30px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  will-change: transform;
 }
 
 .footer-cta-btn:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
+}
+
+/* Bouton Partenaire - Style outline orange */
+.footer-cta-btn.partner-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.footer-cta-btn.partner-btn:hover {
+  background: var(--primary-color);
+  color: #1a1a1a;
 }
 
 /* ===== SOCIAL ICONS ===== */
@@ -77,7 +90,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  will-change: transform;
 }
 
 .footer-social a:hover {
