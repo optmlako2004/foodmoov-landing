@@ -179,7 +179,7 @@
 
 
 /* LOADING / EMPTY */
-.loading-spinner, .no-influencers {
+.influencers-loading, .no-influencers {
   text-align: center;
   font-size: 1.1rem;
   color: var(--body-text);

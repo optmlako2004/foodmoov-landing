@@ -16,18 +16,22 @@ function InfluencersListPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchInfluencers = async () => {
-      try {
-        const data = await api.get("/influencers/public");
-        setInfluencers(data);
-      } catch (error) {
-        console.error("Erreur chargement influenceurs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    let cancelled = false;
 
-    fetchInfluencers();
+    api.get("/influencers/public")
+      .then(data => {
+        if (!cancelled) setInfluencers(data);
+      })
+      .catch(error => {
+        if (!cancelled) {
+          console.error("Erreur chargement influenceurs:", error);
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => { cancelled = true; };
   }, []);
 
   return (
@@ -50,7 +54,7 @@ function InfluencersListPage() {
 
       <section className="influencers-grid-section">
         {loading ? (
-          <div className="loading-spinner">Chargement des profils...</div>
+          <div className="influencers-loading">Chargement des profils...</div>
         ) : influencers.length === 0 ? (
           <div className="no-influencers">
             <p>Aucun influenceur pour le moment. Soyez le premier !</p>
