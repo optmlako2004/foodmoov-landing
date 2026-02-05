@@ -8,6 +8,8 @@ import { useGooglePlacesSearch } from "../hooks/useGooglePlacesSearch";
 import { api } from "../services/api";
 import "./HomePage.css";
 
+// CDN Cloudinary : f_auto (meilleur format), q_auto (qualité auto), w_400 (taille marquee)
+const CDN = "https://res.cloudinary.com/dnmoehkux/image/upload/f_auto,q_auto,w_400/foodmoov_landing";
 
 import {
   FaMapMarkerAlt,

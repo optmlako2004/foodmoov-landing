@@ -145,7 +145,7 @@
   align-items: center;
   gap: 10px;
   height: 100%;
-  margin-right: 6px;
+  margin-right: -2px;
 }
 
 .search-btn:hover {
