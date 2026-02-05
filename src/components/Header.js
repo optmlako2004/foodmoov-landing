@@ -60,53 +60,46 @@ function Header() {
           {/* CTA Buttons */}
           <div className="header-cta">
             {authState.isAuthenticated ? (
-              <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">
+              <a href={getDashboardUrl()} className="cta-button" target="_blank" rel="noopener noreferrer">
                 Mon Espace
               </a>
             ) : (
-              <a href={`${APP_URL}/connexion`} className="cta-btn login">
+              <a href={`${APP_URL}/connexion`} className="cta-button">
                 Se connecter
               </a>
             )}
-            <Link to="/applications" className="cta-btn download">
+            <Link to="/applications" className="cta-button">
               Applications
             </Link>
           </div>
 
           {/* Hamburger Mobile */}
-          <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
+          <button className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
+        <div className={isMenuOpen ? "backdrop open" : "backdrop"} onClick={closeMenu} />
+
         {/* Mobile Menu */}
-        <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+        <nav id="mobile-nav" className={isMenuOpen ? "mobile-nav open" : "mobile-nav"}>
           <ul className="mobile-nav-links">
-            <li><NavLink to="/" onClick={closeMenu} end>Accueil</NavLink></li>
             <li><button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button></li>
             <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
-            <li><NavLink to="/applications" onClick={closeMenu}>Applications</NavLink></li>
-            <li className="mobile-nav-section">Nous rejoindre</li>
-            <li><NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink></li>
-            <li><NavLink to="/devenir-influenceur" onClick={closeMenu}>Influenceur</NavLink></li>
-            <li><NavLink to="/devenir-partenaire" onClick={closeMenu}>Partenaire</NavLink></li>
-            <li className="mobile-nav-section">Foodmoov for Business</li>
-            <li><NavLink to="/entreprise" onClick={closeMenu}>Entreprise privée</NavLink></li>
-            <li><NavLink to="/service-public" onClick={closeMenu}>Collectivité</NavLink></li>
+            <li><NavLink to="/rejoindre" onClick={closeMenu}>Nous rejoindre</NavLink></li>
+            <li><NavLink to="/business" onClick={closeMenu}>Business</NavLink></li>
           </ul>
 
-          <div className="mobile-cta">
+          <div className="mobile-cta-bottom">
             {authState.isAuthenticated ? (
-              <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Mon Espace</a>
+              <a href={getDashboardUrl()} className="cta-button" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Mon Espace</a>
             ) : (
-              <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
+              <a href={`${APP_URL}/connexion`} className="cta-button" onClick={closeMenu}>Se connecter</a>
             )}
+            <Link to="/applications" className="cta-button" onClick={closeMenu}>Applications</Link>
           </div>
         </nav>
       </header>
-
-      {/* Backdrop */}
-      <div className={`backdrop ${isMenuOpen ? 'open' : ''}`} onClick={closeMenu} />
     </>
   );
 }
