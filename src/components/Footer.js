@@ -11,7 +11,7 @@ import tiktokLogo from "../assets/tiktok.png";
 import twitterLogo from "../assets/twitter.png";
 
 function Footer() {
-  useAuth();
+  const { authState, APP_URL } = useAuth();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageStatus, setMessageStatus] = useState("");
@@ -58,26 +58,40 @@ function Footer() {
             </div>
           </div>
 
-          {/* Produit */}
+          {/* Navigation */}
           <div className="footer-col">
-            <h4>Produit</h4>
-            <Link to="/applications">Application mobile</Link>
+            <h4>Navigation</h4>
+            <Link to="/">Accueil</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/applications">Applications</Link>
+            <Link to="/a-propos">À propos</Link>
+            <Link to="/contact">Contact</Link>
           </div>
 
-          {/* Entreprise */}
+          {/* Nous rejoindre */}
           <div className="footer-col">
-            <h4>Entreprise</h4>
-            <Link to="/a-propos">À propos</Link>
+            <h4>Nous rejoindre</h4>
             <Link to="/professionnels">Je suis foodtrucker</Link>
-            <Link to="/entreprise">Entreprises privées</Link>
+            <Link to="/devenir-influenceur">Devenir influenceur</Link>
+            <Link to="/devenir-partenaire">Devenir partenaire</Link>
+          </div>
+
+          {/* Espace B2B */}
+          <div className="footer-col">
+            <h4>Espace B2B</h4>
+            <Link to="/entreprise">Entreprise privée</Link>
             <Link to="/service-public">Service public</Link>
-            <Link to="/contact">Contact</Link>
+            {authState.isAuthenticated ? (
+              <a href={`${APP_URL}/mon-compte`}>Mon Compte</a>
+            ) : (
+              <a href={`${APP_URL}/connexion`}>Se connecter</a>
+            )}
           </div>
 
           {/* Légal */}
           <div className="footer-col">
             <h4>Légal</h4>
-            <Link to="/confidentialite">Politique de confidentialité</Link>
+            <Link to="/confidentialite">Confidentialité</Link>
             <Link to="/mentions-legales">Mentions légales</Link>
             <Link to="/securite">Sécurité</Link>
             <Link to="/aide">Centre d'aide</Link>
@@ -110,7 +124,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Foodmoov. Tous droits réservés.</p>
+        <p>Copyright &copy; {new Date().getFullYear()} Foodmoov - Tous droits réservés.</p>
       </div>
     </footer>
   );

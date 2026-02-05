@@ -1,5 +1,5 @@
 // src/components/Header.js - Header style Preview Dark
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.js";
 import "./Header.css";
@@ -15,6 +15,18 @@ function Header() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Gérer le scroll après navigation vers "/"
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+      // Nettoyer le state pour éviter de rescroller
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
 
   const scrollToFeatures = (e) => {
     e.preventDefault();
@@ -71,8 +83,10 @@ function Header() {
         <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
           <div className="mobile-nav-content">
             <div className="mobile-nav-links">
+              <NavLink to="/" onClick={closeMenu} end>Accueil</NavLink>
               <button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button>
               <NavLink to="/blog" onClick={closeMenu}>Blog</NavLink>
+              <NavLink to="/applications" onClick={closeMenu}>Applications</NavLink>
 
               <span className="mobile-nav-section">Nous rejoindre</span>
               <NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink>
@@ -90,7 +104,6 @@ function Header() {
               ) : (
                 <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
               )}
-              <Link to="/applications" className="cta-btn download" onClick={closeMenu}>Applications</Link>
             </div>
           </div>
         </nav>

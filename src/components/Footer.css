@@ -17,7 +17,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: 1.4fr repeat(4, 1fr);
   gap: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -244,24 +244,37 @@
     gap: 20px;
   }
 
+  .subscribe-form {
+    flex-shrink: 1;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .subscribe-form input {
-    width: 200px;
+    width: 0;
+    min-width: 0;
+    flex: 1;
   }
 }
 
 @media (max-width: 480px) {
   .subscribe-form {
     flex-direction: column;
+    max-width: 300px;
     width: 100%;
+    margin: 0 auto;
   }
 
   .subscribe-form input {
     width: 100%;
     border-radius: 50px;
     margin-bottom: 10px;
+    box-sizing: border-box;
   }
 
   .subscribe-form button {
     border-radius: 50px;
+    width: 100%;
   }
 }
