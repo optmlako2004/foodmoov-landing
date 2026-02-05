@@ -36,51 +36,51 @@ import {
 } from "react-icons/fa";
 
 const marqueeRow1 = [
-  { name: "Logo 1", image: "src/assets/food-images/row1/logo1.avif" },
-  { name: "Pizza", image: "src/assets/food-images/row1/pizza.jpg" },
-  { name: "Frites", image: "src/assets/food-images/row1/frites.jpg" },
-  { name: "Logo 2", image: "src/assets/food-images/row1/logo2.webp" },
-  { name: "Burger", image: "src/assets/food-images/row1/burger.webp" },
-  { name: "Donuts", image: "src/assets/food-images/row2/donuts.jpg" },
-  { name: "Logo 3", image: "src/assets/food-images/row1/logo3.png" },
-  { name: "Hot-dog", image: "src/assets/food-images/row1/hotdog.jpg" },
-  { name: "Noodles", image: "src/assets/food-images/row1/noodles.webp" },
-  { name: "Logo 4", image: "src/assets/food-images/row1/logo4.jpg" },
+  { name: "Logo 1", image: "/food-images/row1/logo1.avif" },
+  { name: "Pizza", image: "/food-images/row1/pizza.jpg" },
+  { name: "Frites", image: "/food-images/row1/frites.jpg" },
+  { name: "Logo 2", image: "/food-images/row1/logo2.webp" },
+  { name: "Burger", image: "/food-images/row1/burger.webp" },
+  { name: "Donuts", image: "/food-images/row2/donuts.jpg" },
+  { name: "Logo 3", image: "/food-images/row1/logo3.png" },
+  { name: "Hot-dog", image: "/food-images/row1/hotdog.jpg" },
+  { name: "Noodles", image: "/food-images/row1/noodles.webp" },
+  { name: "Logo 4", image: "/food-images/row1/logo4.jpg" },
 ];
 
 const marqueeRow2 = [
-  { name: "Kebab", image: "src/assets/food-images/row1/kebab.avif" },
-  { name: "Panini", image: "src/assets/food-images/row1/panini.jpg" },
-  { name: "Logo 5", image: "src/assets/food-images/row1/logo5.jpg" },
-  { name: "Gaufres", image: "src/assets/food-images/row1/gaufres.jpg" },
-  { name: "Pepperoni", image: "src/assets/food-images/row1/pepperoni.jpg" },
-  { name: "Logo 6", image: "src/assets/food-images/row1/logo6.avif" },
-  { name: "Burrito", image: "src/assets/food-images/row2/burrito.jpg" },
-  { name: "Fish & Chips", image: "src/assets/food-images/row2/fishchips.jpg" },
-  { name: "Logo 7", image: "src/assets/food-images/row1/logo7.png" },
-  { name: "Nachos", image: "src/assets/food-images/row2/nachos.jpg" },
+  { name: "Kebab", image: "/food-images/row1/kebab.avif" },
+  { name: "Panini", image: "/food-images/row1/panini.jpg" },
+  { name: "Logo 5", image: "/food-images/row1/logo5.jpg" },
+  { name: "Gaufres", image: "/food-images/row1/gaufres.jpg" },
+  { name: "Pepperoni", image: "/food-images/row1/pepperoni.jpg" },
+  { name: "Logo 6", image: "/food-images/row1/logo6.avif" },
+  { name: "Burrito", image: "/food-images/row2/burrito.jpg" },
+  { name: "Fish & Chips", image: "/food-images/row2/fishchips.jpg" },
+  { name: "Logo 7", image: "/food-images/row1/logo7.png" },
+  { name: "Nachos", image: "/food-images/row2/nachos.jpg" },
 ];
 
 // Images de bouffe uniquement pour la section "FOOD STRIP" (bas de page)
 const foodOnlyItems = [
-  { name: "Pizza", image: "src/assets/food-images/row1/pizza.jpg" },
-  { name: "Frites", image: "src/assets/food-images/row1/frites.jpg" },
-  { name: "Burger", image: "src/assets/food-images/row1/burger.webp" },
-  { name: "Hot-dog", image: "src/assets/food-images/row1/hotdog.jpg" },
-  { name: "Noodles", image: "src/assets/food-images/row1/noodles.webp" },
-  { name: "Kebab", image: "src/assets/food-images/row1/kebab.avif" },
-  { name: "Panini", image: "src/assets/food-images/row1/panini.jpg" },
-  { name: "Gaufres", image: "src/assets/food-images/row1/gaufres.jpg" },
-  { name: "Pepperoni", image: "src/assets/food-images/row1/pepperoni.jpg" },
-  { name: "Burrito", image: "src/assets/food-images/row2/burrito.jpg" },
-  { name: "Fish & Chips", image: "src/assets/food-images/row2/fishchips.jpg" },
-  { name: "Nachos", image: "src/assets/food-images/row2/nachos.jpg" },
-  { name: "Donuts", image: "src/assets/food-images/row2/donuts.jpg" },
-  { name: "Ramen", image: "src/assets/food-images/row2/ramen.jpg" },
-  { name: "Gyros", image: "src/assets/food-images/row2/gyros.jpg" },
-  { name: "Wings", image: "src/assets/food-images/row2/istockphoto-510163478-612x612.jpg" },
-  { name: "Crêpes", image: "src/assets/food-images/row2/crepes.avif" },
-  { name: "Churros", image: "src/assets/food-images/row2/churros.jpg" },
+  { name: "Pizza", image: "/food-images/row1/pizza.jpg" },
+  { name: "Frites", image: "/food-images/row1/frites.jpg" },
+  { name: "Burger", image: "/food-images/row1/burger.webp" },
+  { name: "Hot-dog", image: "/food-images/row1/hotdog.jpg" },
+  { name: "Noodles", image: "/food-images/row1/noodles.webp" },
+  { name: "Kebab", image: "/food-images/row1/kebab.avif" },
+  { name: "Panini", image: "/food-images/row1/panini.jpg" },
+  { name: "Gaufres", image: "/food-images/row1/gaufres.jpg" },
+  { name: "Pepperoni", image: "/food-images/row1/pepperoni.jpg" },
+  { name: "Burrito", image: "/food-images/row2/burrito.jpg" },
+  { name: "Fish & Chips", image: "/food-images/row2/fishchips.jpg" },
+  { name: "Nachos", image: "/food-images/row2/nachos.jpg" },
+  { name: "Donuts", image: "/food-images/row2/donuts.jpg" },
+  { name: "Ramen", image: "/food-images/row2/ramen.jpg" },
+  { name: "Gyros", image: "/food-images/row2/gyros.jpg" },
+  { name: "Wings", image: "/food-images/row2/istockphoto-510163478-612x612.jpg" },
+  { name: "Crêpes", image: "/food-images/row2/crepes.avif" },
+  { name: "Churros", image: "/food-images/row2/churros.jpg" },
 ];
 
 const dropdownFeatures = [
@@ -216,7 +216,7 @@ function HomePage() {
             document.body
           )}
           <div className="hero-sub">
-            <a href={`${import.meta.env.VITE_APP_URL}/connexion`}>Connectez-vous</a> pour retrouver vos adresses récentes.
+            <a href={`${APP_URL}/connexion`}>Connectez-vous</a> pour retrouver vos adresses récentes.
           </div>
           <div className="hero-tags">
             <span><FaMapMarkerAlt /> Géolocalisation</span>

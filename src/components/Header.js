@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
-  const { authState, getDashboardUrl } = useAuth();
+  const { authState, getDashboardUrl, APP_URL } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ function Header() {
                 Mon Espace
               </a>
             ) : (
-              <a href={`${import.meta.env.VITE_APP_URL}/connexion`} className="cta-btn login">
+              <a href={`${APP_URL}/connexion`} className="cta-btn login">
                 Se connecter
               </a>
             )}
@@ -79,7 +79,7 @@ function Header() {
               {authState.isAuthenticated ? (
                 <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Mon Espace</a>
               ) : (
-                <a href={`${import.meta.env.VITE_APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
+                <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
               )}
             </div>
           </div>
