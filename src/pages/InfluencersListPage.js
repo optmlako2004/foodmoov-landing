@@ -20,7 +20,7 @@ function InfluencersListPage() {
 
     api.get("/influencers/public")
       .then(data => {
-        if (!cancelled) setInfluencers(data);
+        if (!cancelled) setInfluencers(data?.influencers || data);
       })
       .catch(error => {
         if (!cancelled) {
