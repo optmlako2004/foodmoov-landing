@@ -1,28 +1,28 @@
 /* src/pages/ApplicationsPage.css */
 
 .applications-page {
-  padding-top: 64px;
+  padding-top: 68px;
   min-height: 100vh;
-  background: #fff;
+  background: var(--warm-bg);
 }
 
 /* Hero */
 .apps-hero {
   text-align: center;
   padding: 60px 24px 40px;
-  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+  background: linear-gradient(180deg, var(--warm-bg) 0%, var(--white) 100%);
 }
 
 .apps-hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #111b21;
+  color: var(--dark-brown);
   margin-bottom: 12px;
 }
 
 .apps-hero p {
   font-size: 1.1rem;
-  color: #667781;
+  color: var(--body-text);
 }
 
 /* Choices Container */
@@ -38,14 +38,14 @@
   align-items: center;
   gap: 60px;
   padding: 40px;
-  background: #fff;
-  border: 1px solid #e8e8e8;
+  background: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .app-choice:hover {
-  border-color: #fca922;
+  border-color: var(--primary-color);
   box-shadow: 0 8px 30px rgba(252, 169, 34, 0.1);
 }
 
@@ -84,32 +84,32 @@
 }
 
 .app-icon-wrapper.client {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-  color: #2e7d32;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffedd5 100%);
+  color: var(--primary-color);
 }
 
 .app-icon-wrapper.pro {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-  color: #e65100;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffedd5 100%);
+  color: var(--primary-hover);
 }
 
 .app-choice h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #111b21;
+  color: var(--dark-brown);
   margin-bottom: 4px;
 }
 
 .app-subtitle {
   display: inline-block;
   font-size: 0.9rem;
-  color: #667781;
+  color: var(--body-text);
   margin-bottom: 16px;
 }
 
 .app-choice-content > p {
   font-size: 1rem;
-  color: #54656f;
+  color: var(--body-text);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -124,7 +124,7 @@
 .app-features li {
   padding: 8px 0;
   font-size: 0.95rem;
-  color: #111b21;
+  color: var(--dark-text);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -132,7 +132,7 @@
 
 .app-features li::before {
   content: "✓";
-  color: #fca922;
+  color: var(--primary-color);
   font-weight: 700;
 }
 
@@ -161,9 +161,9 @@
 }
 
 .apps-divider span {
-  background: #fff;
+  background: var(--white);
   padding: 0 20px;
-  color: #667781;
+  color: var(--body-text);
   font-size: 0.95rem;
   position: relative;
 }
@@ -173,12 +173,12 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #e8e8e8;
+  background: var(--border-color);
 }
 
 /* Other Platforms */
 .other-platforms {
-  background: #f8f9fa;
+  background: var(--warm-bg);
   padding: 60px 24px;
   text-align: center;
 }
@@ -186,7 +186,7 @@
 .other-platforms h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #111b21;
+  color: var(--dark-brown);
   margin-bottom: 30px;
 }
 
@@ -203,24 +203,24 @@
   align-items: center;
   gap: 10px;
   padding: 24px 40px;
-  background: #fff;
-  border: 1px solid #e8e8e8;
+  background: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.2s ease;
 }
 
 .platform-card:hover {
-  border-color: #fca922;
+  border-color: var(--primary-color);
 }
 
 .platform-icon {
   font-size: 2rem;
-  color: #54656f;
+  color: var(--body-text);
 }
 
 .platform-card span {
   font-size: 0.9rem;
-  color: #111b21;
+  color: var(--dark-brown);
   font-weight: 500;
 }
 

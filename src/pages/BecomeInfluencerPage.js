@@ -51,7 +51,7 @@ function BecomeInfluencerPage() {
               <strong>Nouveau sur Foodmoov ?</strong>
             </p>
             <a
-              href={`${APP_URL}/inscription-influenceur`}
+              href={`${APP_URL}/inscription?role=influencer`}
               target="_blank"
               rel="noopener noreferrer"
               style={{

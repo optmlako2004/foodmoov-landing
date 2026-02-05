@@ -100,6 +100,7 @@ export const AuthProvider = ({ children }) => {
     if (role === 'influencer' && influencerStatus === 'validated') return `${APP_URL}/influencer/dashboard`;
     if (role === 'partner' || role === 'partner_pending') return `${APP_URL}/partner/dashboard`;
     if (role === 'pro') return `${APP_URL}/pro/dashboard`;
+    if (role === 'enterprise' || role === 'collectivity') return `${APP_URL}/b2b/dashboard`;
 
     return `${APP_URL}/mon-compte`;
   };

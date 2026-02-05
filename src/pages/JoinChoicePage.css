@@ -1,0 +1,128 @@
+/* src/pages/JoinChoicePage.css */
+
+.join-choice-page {
+  padding-top: 68px;
+  min-height: calc(100vh - 68px);
+  background: var(--warm-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-choice-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.join-choice-container h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dark-brown);
+  margin-bottom: 12px;
+}
+
+.join-choice-container h1 span {
+  color: var(--primary-color);
+}
+
+.join-choice-container > p {
+  color: var(--body-text);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+.join-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.join-choice-card {
+  background: var(--white);
+  border: 2px solid #f0e0c8;
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-choice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.join-choice-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(252, 169, 34, 0.12);
+}
+
+.join-choice-card:hover::before {
+  transform: scaleX(1);
+}
+
+.jc-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+.join-choice-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  margin-bottom: 12px;
+}
+
+.join-choice-card p {
+  color: var(--body-text);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.jc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: gap 0.2s;
+}
+
+.join-choice-card:hover .jc-link {
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .join-choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-choice-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .join-choice-card {
+    padding: 32px 24px;
+  }
+}

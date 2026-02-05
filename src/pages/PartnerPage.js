@@ -48,7 +48,7 @@ function PartnerPage() {
             de notre communauté de gourmands, food truckers et influenceurs.
           </p>
           <div className="partner-hero-actions">
-            <a href={`${APP_URL}/devenir-partenaire`} className="btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href={`${APP_URL}/inscription?role=partner`} className="btn-primary" target="_blank" rel="noopener noreferrer">
               Devenir partenaire <FaArrowRight />
             </a>
             <a href={getLoginUrl()} className="btn-secondary" target="_blank" rel="noopener noreferrer">
@@ -151,7 +151,7 @@ function PartnerPage() {
           <h2>Prêt à rejoindre l'aventure ?</h2>
           <p>Devenez partenaire Foodmoov et développez votre visibilité dès aujourd'hui.</p>
           <div className="cta-buttons">
-            <a href={`${APP_URL}/devenir-partenaire`} className="btn-primary large" target="_blank" rel="noopener noreferrer">
+            <a href={`${APP_URL}/inscription?role=partner`} className="btn-primary large" target="_blank" rel="noopener noreferrer">
               Devenir partenaire <FaArrowRight />
             </a>
           </div>

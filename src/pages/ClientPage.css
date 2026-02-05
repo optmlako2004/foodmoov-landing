@@ -9,8 +9,8 @@
 .client-hero {
   text-align: center;
   padding: 80px 20px;
-  background-color: var(--background-light);
-  border-bottom: 1px solid #e0e0e0;
+  background-color: var(--warm-bg);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .client-hero-content h1 {

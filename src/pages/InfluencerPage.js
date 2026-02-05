@@ -44,7 +44,7 @@ function InfluencerPage() {
               Se connecter
             </a>
             <p style={{ marginTop: '20px', fontSize: '0.9rem', color: '#888' }}>
-              Pas encore de compte ? <a href={`${APP_URL}/inscription`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)' }}>Créer un compte</a>
+              Pas encore de compte ? <a href={`${APP_URL}/inscription?role=influencer`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)' }}>Créer un compte</a>
             </p>
           </div>
         </div>

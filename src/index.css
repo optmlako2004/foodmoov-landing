@@ -9,9 +9,17 @@
   --primary-hover: #ea9409;
   --dark-text: #333333;
   --body-text: #555555;
-  --background-light: #f8f9fa;
-  --white: #ffffff;
-  --border-color: #ddd;
+  --background-light: #fef3e2;
+  --white: #fffcf7;
+  --border-color: #e8ddd0;
+  --dark-brown: #2a1a0a;
+  --warm-bg: #fff8ed;
+
+  /* Tokens sombres (header/footer) */
+  --bg-surface: #2a1a0a;
+  --text-on-dark: #ffffff;
+  --text-on-dark-secondary: #d4c5b0;
+  --text-on-dark-muted: #aa9680;
 }
 
 body {
@@ -23,8 +31,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* --- Nos nouvelles règles --- */
-  background-color: #ffffff; /* Fond blanc par défaut */
+  background-color: var(--warm-bg); /* Fond chaud par défaut */
   color: #4a4a4a; /* Un gris foncé pour le texte, plus doux que le noir */
+}
+
+/* Powered by Google — attribution (Google TOS) */
+.powered-by-google {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px 12px;
+  pointer-events: none;
+  list-style: none;
+}
+.powered-by-google img {
+  height: 14px;
+  opacity: 0.7;
 }
 
 /* Loading state pour le lazy loading des pages */

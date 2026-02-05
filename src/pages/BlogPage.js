@@ -1,7 +1,6 @@
 // src/pages/BlogPage.js
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { mockPosts } from "../data/mockPosts";
 import { blogCategories, getCategoryById } from "../data/blogCategories";
 import { api } from "../services/api";
 import "./BlogPage.css";
@@ -16,29 +15,13 @@ function BlogPage() {
 
   useEffect(() => {
     async function fetchPosts() {
-      let dbPosts = [];
       try {
-        dbPosts = await api.get("/blog/posts");
+        const dbPosts = await api.get("/blog/posts");
+        setPosts(Array.isArray(dbPosts) ? dbPosts : []);
       } catch (error) {
         console.error("Erreur serveur lors de la recuperation des articles:", error);
+        setPosts([]);
       } finally {
-        // Formater les articles MOCK pour qu'ils ressemblent a ceux de la DB
-        const formattedMockPosts = mockPosts.map(mock => ({
-          id: `mock-${mock.id}`,
-          title: mock.title,
-          slug: mock.slug,
-          category: mock.category || 'conseils',
-          main_image_url: mock.image,
-          excerpt: mock.excerpt,
-          body: mock.content,
-          published_at: mock.date,
-          first_name: mock.author,
-          last_name: '',
-          isMock: true
-        }));
-
-        // Fusionner les deux listes (articles de la DB et mocks)
-        setPosts([...dbPosts, ...formattedMockPosts]);
         setLoading(false);
       }
     }
@@ -50,7 +33,7 @@ function BlogPage() {
   const filteredPosts = selectedCategory === "all"
     ? posts
     : posts.filter(post => {
-        const postCategory = (post.category || 'conseils').toLowerCase();
+        const postCategory = (post.category || 'foodtruckers').toLowerCase();
         return postCategory === selectedCategory.toLowerCase();
       });
 

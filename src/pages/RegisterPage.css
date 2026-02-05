@@ -140,7 +140,7 @@
 
 /* Critères Mot de passe */
 .password-criteria-box {
-  background-color: #f8f9fa;
+  background-color: var(--background-light);
   color: #333;
   padding: 15px;
   border-radius: 8px;
@@ -205,4 +205,50 @@
   align-items: center;
   gap: 5px;
   font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 60px 16px;
+  }
+
+  .register-form-wrapper {
+    padding: 30px 24px;
+  }
+
+  .register-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 50px 12px;
+  }
+
+  .register-form-wrapper {
+    padding: 24px 18px;
+  }
+
+  .register-title {
+    font-size: 1.6rem;
+  }
+
+  .register-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="password"] {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    padding: 13px;
+    font-size: 1rem;
+  }
 }

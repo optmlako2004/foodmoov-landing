@@ -1,12 +1,12 @@
 /* src/pages/MentionsLegalesPage.css - Style Page Mentions Légales */
 
 .mentions-landing {
-  padding-top: 64px;
+  padding-top: 68px;
 }
 
 /* ===== HERO ===== */
 .mentions-hero {
-  background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--white) 100%);
   padding: 80px 24px;
   text-align: center;
 }

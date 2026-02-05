@@ -8,8 +8,10 @@ import {
   FaMapMarkerAlt,
   FaTruckMoving,
   FaStar,
-  FaMobileAlt,
+  FaBuilding,
+  FaLandmark,
   FaEnvelope,
+  FaBlog,
 } from "react-icons/fa";
 
 const faqItems = [
@@ -17,29 +19,71 @@ const faqItems = [
     category: "Utilisation",
     questions: [
       {
-        q: "Comment trouver un food truck près de moi ?",
-        a: "Téléchargez l'application Foodmood, activez la géolocalisation et consultez la carte interactive pour voir les food trucks actifs autour de vous."
+        q: "Comment trouver un food truck ?",
+        a: "Rendez-vous sur notre application web et accedez a la carte interactive. Vous y trouverez tous les food trucks references sur Foodmoov avec leur emplacement."
       },
       {
-        q: "Les informations sont-elles en temps réel ?",
-        a: "Oui, les food trucks partagent leur position GPS en direct. La carte est mise à jour automatiquement."
+        q: "Qu'est-ce que le Click & Collect ?",
+        a: "Le Click & Collect est une fonctionnalite en cours de developpement qui permettra de commander directement aupres des food trucks et de recuperer votre commande sur place, comme sur Uber Eats mais dedie aux food trucks."
       },
       {
-        q: "Puis-je recevoir des notifications ?",
-        a: "Oui, activez les notifications pour être alerté quand vos food trucks favoris s'installent près de chez vous."
+        q: "Dois-je creer un compte pour utiliser Foodmoov ?",
+        a: "Vous pouvez consulter la carte et le blog sans compte. Pour acceder aux fonctionnalites avancees (favoris, commandes, demandes B2B), un compte gratuit est necessaire. L'inscription se fait par email ou via Google."
+      },
+      {
+        q: "Foodmoov est-il gratuit ?",
+        a: "L'utilisation de la plateforme est entierement gratuite pour les clients. Les professionnels (food truckers) ont acces a un abonnement PRO pour beneficier de fonctionnalites avancees."
       }
     ]
   },
   {
-    category: "Professionnels",
+    category: "Professionnels (Food Truckers)",
     questions: [
       {
-        q: "Comment inscrire mon food truck ?",
-        a: "Téléchargez l'application Foodmoov Driver et créez votre compte professionnel. Vous pourrez ensuite partager votre position et gérer votre menu."
+        q: "Comment inscrire mon food truck sur Foodmoov ?",
+        a: "Creez un compte sur app.foodmoov.com, puis souscrivez a l'abonnement PRO. Vous pourrez ensuite creer votre profil professionnel, gerer vos menus et recevoir des demandes de devis."
       },
       {
-        q: "Foodmoov est-il gratuit pour les pros ?",
-        a: "L'inscription et l'utilisation de base sont gratuites. Des options premium sont disponibles pour plus de visibilité."
+        q: "Que comprend l'abonnement PRO ?",
+        a: "L'abonnement PRO vous donne acces a : la creation de votre profil food truck, la gestion de vos menus, la reception de demandes d'evenements (entreprises et collectivites), et la visibilite sur la carte interactive."
+      },
+      {
+        q: "Comment recevoir des demandes d'evenements ?",
+        a: "Une fois votre profil PRO actif, les entreprises et collectivites peuvent vous envoyer des demandes d'evenements. Vous recevez les demandes directement dans votre tableau de bord et pouvez y repondre avec un devis."
+      },
+      {
+        q: "Comment fonctionne le systeme de devis ?",
+        a: "Quand vous recevez une demande d'evenement, vous pouvez creer un devis detaille (prestations, tarifs, conditions). Le devis est transmis a l'organisateur par l'equipe Foodmoov."
+      }
+    ]
+  },
+  {
+    category: "Entreprises",
+    questions: [
+      {
+        q: "Comment organiser un evenement food truck pour mon entreprise ?",
+        a: "Rendez-vous sur la page Entreprise de notre site et remplissez le formulaire de demande. Indiquez le type d'evenement, la date, le nombre de participants et vos preferences. Notre equipe s'occupe de trouver les meilleurs food trucks."
+      },
+      {
+        q: "Quels types d'evenements sont possibles ?",
+        a: "Team building, afterwork, seminaire, inauguration, fete d'entreprise, pause dejeuner speciale... Tous les formats sont possibles, de 20 a plusieurs centaines de personnes."
+      },
+      {
+        q: "Comment se deroule la mise en relation ?",
+        a: "Apres votre demande, notre equipe la transmet aux food trucks adaptes. Ceux-ci vous envoient un devis. Vous choisissez le food truck qui vous convient et organisez les details directement."
+      }
+    ]
+  },
+  {
+    category: "Collectivites / Service Public",
+    questions: [
+      {
+        q: "Comment integrer des food trucks dans un evenement municipal ?",
+        a: "Rendez-vous sur la page Service Public de notre site. Remplissez le formulaire de demande en precisant le type d'evenement (marche, festival, animation), la date et le lieu. Notre equipe coordonne la mise en relation."
+      },
+      {
+        q: "Quels types d'evenements publics sont concernes ?",
+        a: "Festivals, marches, animations estivales, fetes de quartier, evenements sportifs, marches de Noel... Foodmoov accompagne tous les formats d'evenements publics."
       }
     ]
   },
@@ -48,11 +92,28 @@ const faqItems = [
     questions: [
       {
         q: "Comment devenir influenceur Foodmoov ?",
-        a: "Créez un compte influenceur sur notre plateforme. Vous pourrez ensuite envoyer des demandes de dégustation aux food trucks partenaires."
+        a: "Creez un compte sur app.foodmoov.com, puis postulez en tant qu'influenceur. Remplissez votre profil avec vos liens de reseaux sociaux (Instagram, TikTok, etc.). Votre candidature sera examinee par notre equipe."
       },
       {
-        q: "Quels sont les critères pour être accepté ?",
-        a: "Vous devez avoir un compte Instagram ou TikTok actif avec du contenu orienté food ou lifestyle."
+        q: "Quels sont les criteres pour etre accepte ?",
+        a: "Vous devez avoir un compte Instagram, TikTok ou autre reseau social actif avec du contenu oriente food, lifestyle ou local. La qualite du contenu et l'engagement comptent plus que le nombre d'abonnes."
+      },
+      {
+        q: "Que peut faire un influenceur valide ?",
+        a: "Les influenceurs valides accedent a un tableau de bord dedie. Ils peuvent consulter les demandes de collaboration avec des food trucks et y repondre directement."
+      }
+    ]
+  },
+  {
+    category: "Blog",
+    questions: [
+      {
+        q: "Ou trouver les articles du blog ?",
+        a: "Le blog est accessible depuis le menu principal de notre site. Vous y trouverez des articles sur les tendances food truck, des conseils pour les professionnels, des guides pour les entreprises et collectivites."
+      },
+      {
+        q: "Quelles categories d'articles sont disponibles ?",
+        a: "Le blog couvre 4 categories : Conseils Foodtruckers (astuces pour les pros), Entreprise Privee (organiser des evenements), Service Public (animations municipales) et Tendances (nouveautes du secteur)."
       }
     ]
   }
@@ -64,7 +125,7 @@ function HelpPage() {
       <div className="help-hero">
         <FaQuestionCircle className="help-icon" />
         <h1>Centre d'aide</h1>
-        <p>Trouvez des réponses à vos questions</p>
+        <p>Trouvez des reponses a vos questions sur Foodmoov</p>
       </div>
 
       {/* Quick Links */}
@@ -75,21 +136,29 @@ function HelpPage() {
         </Link>
         <Link to="/fonctionnalites/professionnels" className="quick-link">
           <FaTruckMoving />
-          <span>Espace Pro</span>
+          <span>Espace PRO</span>
         </Link>
         <Link to="/fonctionnalites/influenceurs" className="quick-link">
           <FaStar />
           <span>Influenceurs</span>
         </Link>
-        <Link to="/applications" className="quick-link">
-          <FaMobileAlt />
-          <span>Applications</span>
+        <Link to="/entreprise" className="quick-link">
+          <FaBuilding />
+          <span>Entreprises</span>
+        </Link>
+        <Link to="/service-public" className="quick-link">
+          <FaLandmark />
+          <span>Service Public</span>
+        </Link>
+        <Link to="/blog" className="quick-link">
+          <FaBlog />
+          <span>Blog</span>
         </Link>
       </div>
 
       {/* FAQ */}
       <div className="help-faq">
-        <h2>Questions fréquentes</h2>
+        <h2>Questions frequentes</h2>
 
         {faqItems.map((category, idx) => (
           <div key={idx} className="faq-category">
@@ -108,8 +177,8 @@ function HelpPage() {
 
       {/* Contact */}
       <div className="help-contact">
-        <h3>Vous n'avez pas trouvé votre réponse ?</h3>
-        <p>Contactez-nous et nous vous répondrons dans les plus brefs délais.</p>
+        <h3>Vous n'avez pas trouve votre reponse ?</h3>
+        <p>Contactez-nous et nous vous repondrons dans les plus brefs delais.</p>
         <a href="mailto:contact@foodmoov.com" className="contact-btn">
           <FaEnvelope /> contact@foodmoov.com
         </a>

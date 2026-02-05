@@ -1,12 +1,12 @@
 /* src/pages/PartnerPage.css - Style Vitrine Partenaires */
 
 .partner-landing {
-  padding-top: 64px;
+  padding-top: 68px;
 }
 
 /* ===== HERO ===== */
 .partner-hero-landing {
-  background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
+  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--warm-bg) 100%);
   padding: 100px 24px;
   text-align: center;
 }
@@ -238,7 +238,7 @@
 /* ===== STATS SECTION ===== */
 .partner-stats-section {
   padding: 60px 24px;
-  background: #1a1a1a;
+  background: var(--dark-brown);
 }
 
 .partner-stats-section .stats-container {

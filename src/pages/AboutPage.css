@@ -2,7 +2,7 @@
 
 .about-page {
   padding: 60px 20px;
-  background-color: var(--white); /* Fond blanc pour un look épuré */
+  background-color: var(--warm-bg); /* Fond chaud harmonisé */
 }
 
 .about-container {

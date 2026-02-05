@@ -37,7 +37,7 @@
 
 /* Skeleton Card */
 .skeleton-card {
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -60,7 +60,7 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -84,7 +84,7 @@
   align-items: center;
   gap: 16px;
   padding: 16px;
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }

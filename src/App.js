@@ -27,6 +27,9 @@ const FeatureMapPage = lazy(() => import("./pages/features/FeatureMapPage.js"));
 const FeatureMenusPage = lazy(() => import("./pages/features/FeatureMenusPage.js"));
 const FeatureProsPage = lazy(() => import("./pages/features/FeatureProsPage.js"));
 const FeatureInfluencersPage = lazy(() => import("./pages/features/FeatureInfluencersPage.js"));
+const FeatureReviewsPage = lazy(() => import("./pages/features/FeatureReviewsPage.js"));
+const FeatureAlertsPage = lazy(() => import("./pages/features/FeatureAlertsPage.js"));
+const FeatureSocialPage = lazy(() => import("./pages/features/FeatureSocialPage.js"));
 
 // --- PAGES SECONDAIRES ---
 const ProfessionalPage = lazy(() => import("./pages/ProfessionalPage.js"));
@@ -40,6 +43,12 @@ const BecomeInfluencerPage = lazy(() => import("./pages/BecomeInfluencerPage.js"
 const InfluencersListPage = lazy(() => import("./pages/InfluencersListPage.js"));
 const InfluencerPage = lazy(() => import("./pages/InfluencerPage.js"));
 const MenuPage = lazy(() => import("./pages/MenuPage.js"));
+const AboutPage = lazy(() => import("./pages/AboutPage.js"));
+const ClientPage = lazy(() => import("./pages/ClientPage.js"));
+const EntreprisePage = lazy(() => import("./pages/EntreprisePage.js"));
+const ServicePublicPage = lazy(() => import("./pages/ServicePublicPage.js"));
+const BusinessChoicePage = lazy(() => import("./pages/BusinessChoicePage.js"));
+const JoinChoicePage = lazy(() => import("./pages/JoinChoicePage.js"));
 
 function AppContent() {
   const location = useLocation();
@@ -80,10 +89,16 @@ function AppContent() {
           <Route path="/fonctionnalites/menus" element={<FeatureMenusPage />} />
           <Route path="/fonctionnalites/professionnels" element={<FeatureProsPage />} />
           <Route path="/fonctionnalites/influenceurs" element={<FeatureInfluencersPage />} />
+          <Route path="/fonctionnalites/avis" element={<FeatureReviewsPage />} />
+          <Route path="/fonctionnalites/alertes" element={<FeatureAlertsPage />} />
+          <Route path="/fonctionnalites/partage" element={<FeatureSocialPage />} />
 
           {/* Autres pages */}
           <Route path="/professionnels" element={<ProfessionalPage />} />
+          <Route path="/rejoindre" element={<JoinChoicePage />} />
           <Route path="/devenir-partenaire" element={<PartnerPage />} />
+          <Route path="/espace-client" element={<ClientPage />} />
+          <Route path="/a-propos" element={<AboutPage />} />
           <Route path="/confidentialite" element={<PrivacyPolicyPage />} />
           <Route path="/securite" element={<SecurityPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -99,6 +114,11 @@ function AppContent() {
 
           {/* Page Menu (connexion/inscription) */}
           <Route path="/menu" element={<MenuPage />} />
+
+          {/* Pages B2B */}
+          <Route path="/business" element={<BusinessChoicePage />} />
+          <Route path="/entreprise" element={<EntreprisePage />} />
+          <Route path="/service-public" element={<ServicePublicPage />} />
 
           {/* Fallback */}
           <Route path="*" element={<HomePage />} />

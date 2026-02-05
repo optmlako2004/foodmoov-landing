@@ -2,7 +2,7 @@
 
 .single-post-page {
   padding: 40px 20px;
-  background-color: #f8f9fa;
+  background-color: var(--warm-bg);
   min-height: 80vh;
 }
 
@@ -10,7 +10,7 @@
 .post-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 40px 50px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -24,7 +24,7 @@
   margin-bottom: 40px;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #f0f0f0; 
+  background-color: var(--warm-bg);
 }
 
 .custom-slider {
@@ -58,8 +58,8 @@
   z-index: 10;
   
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ddd;
-  color: #333;
+  border: 1px solid var(--border-color);
+  color: var(--dark-text);
   opacity: 0;
 }
 
@@ -126,12 +126,12 @@
 .post-header h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #222;
+  color: var(--dark-brown);
   line-height: 1.2;
 }
 
 .post-meta {
-  color: #666;
+  color: var(--body-text);
   font-size: 1rem;
 }
 
@@ -139,7 +139,7 @@
 .post-content {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #444;
+  color: var(--dark-text);
   margin-bottom: 60px;
 }
 
@@ -149,7 +149,7 @@
 
 .post-content h2, 
 .post-content h3 {
-  color: #111;
+  color: var(--dark-brown);
   margin-top: 40px;
   margin-bottom: 20px;
   font-weight: 700;
@@ -187,7 +187,7 @@
   padding: 10px 25px;
   
   background-color: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 50px;
   color: #555;
   
@@ -209,5 +209,83 @@
   text-align: center;
   padding: 80px;
   font-size: 1.2rem;
-  color: #888;
+  color: var(--body-text);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .single-post-page {
+    padding: 30px 16px;
+  }
+
+  .post-container {
+    padding: 28px 24px;
+  }
+
+  .post-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .slider-image {
+    max-height: 350px;
+  }
+
+  .slider-btn {
+    width: 38px;
+    height: 38px;
+    opacity: 1;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .post-loading, .post-not-found {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-post-page {
+    padding: 20px 10px;
+  }
+
+  .post-container {
+    padding: 20px 16px;
+  }
+
+  .post-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .post-header {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+  }
+
+  .post-hero-section {
+    margin-bottom: 25px;
+  }
+
+  .slider-image {
+    max-height: 250px;
+  }
+
+  .slider-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .slider-btn.prev { left: 10px; }
+  .slider-btn.next { right: 10px; }
+
+  .post-content {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .back-to-blog-link {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
 }

@@ -55,7 +55,7 @@ function FeatureInfluencersPage() {
       <div className="feature-cta">
         <h3>Envie de rejoindre le programme ?</h3>
         <p>Créez votre compte influenceur et commencez à recevoir des dégustations.</p>
-        <a href={`${APP_URL}/devenir-influenceur`} className="cta-btn" target="_blank" rel="noopener noreferrer">
+        <a href={`${APP_URL}/inscription?role=influencer`} className="cta-btn" target="_blank" rel="noopener noreferrer">
           Devenir influenceur
         </a>
       </div>

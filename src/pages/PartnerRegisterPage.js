@@ -29,7 +29,7 @@ function PartnerRegisterPage() {
               <strong>Prêt à nous rejoindre ?</strong>
             </p>
             <a
-              href={`${APP_URL}/devenir-partenaire`}
+              href={`${APP_URL}/inscription?role=partner`}
               target="_blank"
               rel="noopener noreferrer"
               style={{

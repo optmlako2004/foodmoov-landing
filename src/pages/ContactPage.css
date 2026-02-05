@@ -1,12 +1,12 @@
 /* src/pages/ContactPage.css - Style Page Contact */
 
 .contact-landing {
-  padding-top: 64px;
+  padding-top: 68px;
 }
 
 /* ===== HERO ===== */
 .contact-hero {
-  background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
+  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--warm-bg) 100%);
   padding: 80px 24px;
   text-align: center;
 }
@@ -184,7 +184,7 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #999;
+  color: var(--body-text);
 }
 
 .form-group textarea {
@@ -244,7 +244,7 @@
 }
 
 .submit-btn:disabled {
-  background: #ccc;
+  background: var(--border-color);
   cursor: not-allowed;
   transform: none;
 }

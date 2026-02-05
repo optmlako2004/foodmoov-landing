@@ -3,14 +3,13 @@
 .blog-page {
   /* ON RETIRE : max-width et margin pour que l'en-tête prenne toute la largeur */
   padding-bottom: 60px;
+  background-color: var(--warm-bg);
 }
 
 .blog-page-header {
   text-align: center;
   padding: 60px 20px;
-  background-color: var(
-    --background-light
-  ); /* Fond clair pour un effet "héros" */
+  background-color: var(--warm-bg); /* Fond chaud harmonisé */
   margin-bottom: 60px;
 }
 
@@ -110,12 +109,12 @@
   align-items: center;
   margin-top: 20px;
   padding-top: 15px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--warm-bg);
 }
 
 .post-meta {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--body-text);
 }
 
 .read-more-link {

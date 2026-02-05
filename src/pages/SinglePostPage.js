@@ -2,8 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { mockPosts } from "../data/mockPosts";
-import { blogCategories, getCategoryById } from "../data/blogCategories";
+import { getCategoryById } from "../data/blogCategories";
 import { api } from "../services/api";
 import "./SinglePostPage.css";
 
@@ -19,23 +18,8 @@ function SinglePostPage() {
         const data = await api.get(`/blog/posts/${slug}`);
         setPostData(data);
       } catch (err) {
-        console.error("API error, falling back to mocks:", err);
-        // Fallback Mock
-        const foundMock = mockPosts.find(p => p.slug === slug);
-        if (foundMock) {
-          setPostData({
-            post: {
-              title: foundMock.title,
-              category: foundMock.category || 'conseils',
-              published_at: new Date().toISOString(),
-              first_name: foundMock.author, last_name: '',
-              main_image_url: foundMock.image, body: foundMock.content
-            },
-            slideshow_images: []
-          });
-        } else {
-          setPostData(null);
-        }
+        console.error("Erreur lors du chargement de l'article:", err);
+        setPostData(null);
       } finally {
         setLoading(false);
       }
