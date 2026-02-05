@@ -41,7 +41,8 @@ function Header() {
           <nav className="desktop-nav">
             <button className="nav-link" onClick={scrollToFeatures}>Fonctionnalités</button>
             <NavLink to="/blog" className="nav-link">Blog</NavLink>
-            <NavLink to="/professionnels" className="nav-link">Je suis foodtrucker</NavLink>
+            <NavLink to="/rejoindre" className="nav-link">Nous rejoindre</NavLink>
+            <NavLink to="/business" className="nav-link">Business</NavLink>
           </nav>
 
           {/* CTA Buttons */}
@@ -72,7 +73,15 @@ function Header() {
             <div className="mobile-nav-links">
               <button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button>
               <NavLink to="/blog" onClick={closeMenu}>Blog</NavLink>
+
+              <span className="mobile-nav-section">Nous rejoindre</span>
               <NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink>
+              <NavLink to="/devenir-influenceur" onClick={closeMenu}>Influenceur</NavLink>
+              <NavLink to="/devenir-partenaire" onClick={closeMenu}>Partenaire</NavLink>
+
+              <span className="mobile-nav-section">Foodmoov for Business</span>
+              <NavLink to="/entreprise" onClick={closeMenu}>Entreprise privée</NavLink>
+              <NavLink to="/service-public" onClick={closeMenu}>Collectivité</NavLink>
             </div>
 
             <div className="mobile-cta">
@@ -81,6 +90,7 @@ function Header() {
               ) : (
                 <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
               )}
+              <Link to="/applications" className="cta-btn download" onClick={closeMenu}>Applications</Link>
             </div>
           </div>
         </nav>
