@@ -8,6 +8,7 @@
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#FF6B35" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Foodmoov" />
     <meta name="google-site-verification" content="sBeq2AjlgpItuzWrEEKP-IxUpJbBFgpmrBaHwGlllyc" />
@@ -38,6 +39,13 @@
       "logo": "https://foodmoov.com/logo.png"
     }
     </script>
+
+    <!-- Preload des premieres images du marquee (au-dessus de la ligne de flottaison) -->
+    <link rel="preload" as="image" href="/food-images/row1/logo1.avif" />
+    <link rel="preload" as="image" href="/food-images/row1/pizza.jpg" />
+    <link rel="preload" as="image" href="/food-images/row1/frites.jpg" />
+    <link rel="preload" as="image" href="/food-images/row1/logo2.webp" />
+    <link rel="preload" as="image" href="/food-images/row1/burger.webp" />
   </head>
   <body>
     <div id="root"></div>

@@ -357,6 +357,7 @@
   display: flex;
   gap: 8px;
   width: max-content;
+  will-change: transform;
 }
 
 .marquee-left {
@@ -736,6 +737,7 @@
   gap: 20px;
   animation: scrollStrip 50s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 
 .food-strip-item {
@@ -795,16 +797,20 @@
 }
 
 .audience-header .section-tag {
-  display: inline-block;
-  background: var(--warm-bg);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(252, 169, 34, 0.15);
   color: var(--primary-hover);
-  padding: 6px 18px;
+  padding: 8px 22px;
   border-radius: 30px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 14px;
+  border: 1px solid rgba(252, 169, 34, 0.3);
+  backdrop-filter: blur(6px);
 }
 
 .audience-header h2 {

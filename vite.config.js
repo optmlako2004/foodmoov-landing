@@ -7,7 +7,8 @@ export default defineConfig({
     react(),
   ],
   server: {
-    port: 5173, // Landing sur port 5173
+    port: 5173,
+    strictPort: true,
   },
   esbuild: {
     loader: "jsx",
@@ -20,5 +21,17 @@ export default defineConfig({
         ".js": "jsx",
       },
     },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          icons: ['react-icons'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 500,
+    sourcemap: false,
   },
 });

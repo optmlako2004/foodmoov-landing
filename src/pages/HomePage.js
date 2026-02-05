@@ -42,7 +42,7 @@ const marqueeRow1 = [
   { name: "Logo 2", image: "/food-images/row1/logo2.webp" },
   { name: "Burger", image: "/food-images/row1/burger.webp" },
   { name: "Donuts", image: "/food-images/row2/donuts.jpg" },
-  { name: "Logo 3", image: "/food-images/row1/logo3.png" },
+  { name: "Logo 3", image: "/food-images/row1/logo3.webp" },
   { name: "Hot-dog", image: "/food-images/row1/hotdog.jpg" },
   { name: "Noodles", image: "/food-images/row1/noodles.webp" },
   { name: "Logo 4", image: "/food-images/row1/logo4.jpg" },
@@ -57,7 +57,7 @@ const marqueeRow2 = [
   { name: "Logo 6", image: "/food-images/row1/logo6.avif" },
   { name: "Burrito", image: "/food-images/row2/burrito.jpg" },
   { name: "Fish & Chips", image: "/food-images/row2/fishchips.jpg" },
-  { name: "Logo 7", image: "/food-images/row1/logo7.png" },
+  { name: "Logo 7", image: "/food-images/row1/logo7.webp" },
   { name: "Nachos", image: "/food-images/row2/nachos.jpg" },
 ];
 
