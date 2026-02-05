@@ -81,36 +81,32 @@ function Header() {
 
         {/* Mobile Menu */}
         <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
-          <div className="mobile-nav-content">
-            <div className="mobile-nav-links">
-              <NavLink to="/" onClick={closeMenu} end>Accueil</NavLink>
-              <button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button>
-              <NavLink to="/blog" onClick={closeMenu}>Blog</NavLink>
-              <NavLink to="/applications" onClick={closeMenu}>Applications</NavLink>
+          <ul className="mobile-nav-links">
+            <li><NavLink to="/" onClick={closeMenu} end>Accueil</NavLink></li>
+            <li><button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button></li>
+            <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
+            <li><NavLink to="/applications" onClick={closeMenu}>Applications</NavLink></li>
+            <li className="mobile-nav-section">Nous rejoindre</li>
+            <li><NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink></li>
+            <li><NavLink to="/devenir-influenceur" onClick={closeMenu}>Influenceur</NavLink></li>
+            <li><NavLink to="/devenir-partenaire" onClick={closeMenu}>Partenaire</NavLink></li>
+            <li className="mobile-nav-section">Foodmoov for Business</li>
+            <li><NavLink to="/entreprise" onClick={closeMenu}>Entreprise privée</NavLink></li>
+            <li><NavLink to="/service-public" onClick={closeMenu}>Collectivité</NavLink></li>
+          </ul>
 
-              <span className="mobile-nav-section">Nous rejoindre</span>
-              <NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink>
-              <NavLink to="/devenir-influenceur" onClick={closeMenu}>Influenceur</NavLink>
-              <NavLink to="/devenir-partenaire" onClick={closeMenu}>Partenaire</NavLink>
-
-              <span className="mobile-nav-section">Foodmoov for Business</span>
-              <NavLink to="/entreprise" onClick={closeMenu}>Entreprise privée</NavLink>
-              <NavLink to="/service-public" onClick={closeMenu}>Collectivité</NavLink>
-            </div>
-
-            <div className="mobile-cta">
-              {authState.isAuthenticated ? (
-                <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Mon Espace</a>
-              ) : (
-                <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
-              )}
-            </div>
+          <div className="mobile-cta">
+            {authState.isAuthenticated ? (
+              <a href={getDashboardUrl()} className="cta-btn login" target="_blank" rel="noopener noreferrer">Mon Espace</a>
+            ) : (
+              <a href={`${APP_URL}/connexion`} className="cta-btn login" onClick={closeMenu}>Se connecter</a>
+            )}
           </div>
         </nav>
       </header>
 
       {/* Backdrop */}
-      {isMenuOpen && <div className="backdrop" onClick={closeMenu} />}
+      <div className={`backdrop ${isMenuOpen ? 'open' : ''}`} onClick={closeMenu} />
     </>
   );
 }
