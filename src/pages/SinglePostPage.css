@@ -141,6 +141,8 @@
   line-height: 1.8;
   color: var(--dark-text);
   margin-bottom: 60px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .post-content p {
@@ -167,6 +169,8 @@
   border-bottom: 2px solid var(--primary-color); /* Trait Orange */
   padding: 0 2px; /* Espacement minime */
   transition: all 0.2s ease-in-out;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* 2. État au survol (Avec souris) : Fond Orange + Texte Noir */

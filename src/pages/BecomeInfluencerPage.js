@@ -1,82 +1,119 @@
-// src/pages/BecomeInfluencerPage.js - Version Landing
-// Redirige vers app.foodmoov.com pour inscription/connexion
-import React from "react";
-import { Link } from "react-router-dom";
-import "./RegisterPage.css";
-import { FaStar } from "react-icons/fa";
-
-// URL de l'application (configurable via env)
-const APP_URL = import.meta.env.VITE_APP_URL || "https://app.foodmoov.com";
+// src/pages/BecomeInfluencerPage.js - Page Vitrine Influenceurs
+import { useAuth } from "../context/AuthContext";
+import "./BecomeInfluencerPage.css";
+import {
+  FaStar,
+  FaCamera,
+  FaUtensils,
+  FaUsers,
+  FaArrowRight,
+  FaInstagram,
+  FaBullhorn,
+  FaHeart,
+} from "react-icons/fa";
 
 function BecomeInfluencerPage() {
+  const { getLoginUrl, APP_URL } = useAuth();
+
   return (
-    <div className="register-container">
-      <title>Devenir Influenceur - Foodmoov</title>
-      <div className="register-form-wrapper" style={{ borderTop: "5px solid var(--primary-color)", maxWidth: "500px" }}>
-        <div style={{ textAlign: "center", marginBottom: "20px" }}>
-          <FaStar style={{ fontSize: "3rem", color: "var(--primary-color)" }} />
-        </div>
-        <h1 className="register-title">Devenir Influenceur</h1>
-        <div style={{ backgroundColor: "#fff3cd", padding: "25px", borderRadius: "8px", marginBottom: "20px", border: "1px solid #ffc107", textAlign: "center" }}>
-          <p style={{ margin: "0 0 20px 0", color: "#856404", fontSize: "1.05rem", lineHeight: "1.6" }}>
-            <strong>Rejoignez notre communauté d'influenceurs !</strong><br /><br />
-            Vous êtes passionné de street-food et vous avez une présence sur les réseaux sociaux ?
-            Devenez influenceur Foodmoov !
+    <div className="influencer-landing">
+      <title>Devenir Influenceur | Foodmoov</title>
+      <meta
+        name="description"
+        content="Devenez influenceur Foodmoov et partagez votre passion pour la street food avec notre communauté."
+      />
+
+      {/* Hero Section */}
+      <section className="influencer-hero-landing">
+        <div className="influencer-hero-content">
+          <span className="influencer-badge"><FaStar /> Influenceur</span>
+          <h1>Devenez influenceur Foodmoov</h1>
+          <p>
+            Vous êtes passionné de street food et actif sur les réseaux sociaux ?
+            Rejoignez notre communauté d'influenceurs et partagez les meilleures
+            expériences food truck avec votre audience.
           </p>
-          <div style={{ borderTop: "1px dashed #ffc107", paddingTop: "20px", marginTop: "10px" }}>
-            <p style={{ color: "#856404", marginBottom: "15px", fontSize: "0.95rem" }}>
-              <strong>Vous avez déjà un compte Foodmoov ?</strong>
-            </p>
-            <a
-              href={`${APP_URL}/connexion?redirect=/devenir-influenceur`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                padding: "12px 30px",
-                backgroundColor: "var(--primary-color)",
-                color: "var(--dark-text)",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontWeight: "bold",
-                fontSize: "1rem",
-                textDecoration: "none",
-                marginBottom: "15px"
-              }}
-            >
-              Se connecter
+          <div className="influencer-hero-actions">
+            <a href={`${APP_URL}/inscription?role=influencer`} className="btn-primary" target="_blank" rel="noopener noreferrer">
+              Devenir influenceur <FaArrowRight />
             </a>
-            <p style={{ color: "#856404", margin: "20px 0 15px 0", fontSize: "0.95rem" }}>
-              <strong>Nouveau sur Foodmoov ?</strong>
-            </p>
-            <a
-              href={`${APP_URL}/inscription?role=influencer`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                padding: "12px 30px",
-                backgroundColor: "#333",
-                color: "#fff",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontWeight: "bold",
-                fontSize: "1rem",
-                textDecoration: "none"
-              }}
-            >
-              Créer mon compte influenceur
+            <a href={getLoginUrl()} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+              J'ai déjà un compte
             </a>
           </div>
         </div>
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <Link to="/" style={{ color: "#666", textDecoration: "none" }}>
-            Retour à l'accueil
-          </Link>
+      </section>
+
+      {/* Avantages Section */}
+      <section className="influencer-benefits-section">
+        <div className="section-header">
+          <h2>Pourquoi devenir influenceur ?</h2>
+          <p>Des avantages exclusifs pour les créateurs de contenu</p>
         </div>
-      </div>
+        <div className="benefits-grid">
+          <div className="benefit-card">
+            <div className="benefit-icon"><FaUtensils /></div>
+            <h3>Repas offerts</h3>
+            <p>Dégustez gratuitement chez nos food trucks partenaires lors de vos collaborations.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon"><FaBullhorn /></div>
+            <h3>Visibilité</h3>
+            <p>Gagnez en visibilité auprès de notre communauté de gourmands et food truckers.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon"><FaUsers /></div>
+            <h3>Réseau exclusif</h3>
+            <p>Accédez à un réseau de food trucks et de partenaires pour des collaborations uniques.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon"><FaCamera /></div>
+            <h3>Liberté créative</h3>
+            <p>Créez du contenu authentique à votre image, en toute liberté.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Comment ça marche */}
+      <section className="influencer-how-section">
+        <div className="section-header">
+          <h2>Comment ça marche ?</h2>
+          <p>3 étapes pour devenir influenceur</p>
+        </div>
+        <div className="steps-grid">
+          <div className="step-card">
+            <div className="step-number">1</div>
+            <div className="step-icon"><FaInstagram /></div>
+            <h3>Inscrivez-vous</h3>
+            <p>Créez votre compte influenceur et partagez vos réseaux sociaux.</p>
+          </div>
+          <div className="step-card">
+            <div className="step-number">2</div>
+            <div className="step-icon"><FaUtensils /></div>
+            <h3>Recevez des invitations</h3>
+            <p>Les food trucks vous invitent pour des dégustations offertes.</p>
+          </div>
+          <div className="step-card">
+            <div className="step-number">3</div>
+            <div className="step-icon"><FaHeart /></div>
+            <h3>Partagez</h3>
+            <p>Créez du contenu et partagez votre expérience sur vos réseaux.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="influencer-cta-section">
+        <div className="cta-content">
+          <h2>Prêt à devenir influenceur ?</h2>
+          <p>Rejoignez la communauté Foodmoov et partagez votre passion pour la street food.</p>
+          <div className="cta-buttons">
+            <a href={`${APP_URL}/inscription?role=influencer`} className="btn-primary large" target="_blank" rel="noopener noreferrer">
+              Devenir influenceur <FaArrowRight />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

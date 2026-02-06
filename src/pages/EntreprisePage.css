@@ -3,6 +3,7 @@
 .entreprise-page {
   padding-top: 80px;
   background-color: var(--warm-bg);
+  overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -423,7 +424,9 @@
   }
 
   .entreprise-hero .visual-card {
-    padding: 40px 50px;
+    padding: 30px 40px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .entreprise-hero .visual-icon {

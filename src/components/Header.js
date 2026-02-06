@@ -83,12 +83,39 @@ function Header() {
 
         {/* Mobile Menu */}
         <nav id="mobile-nav" className={isMenuOpen ? "mobile-nav open" : "mobile-nav"}>
-          <ul className="mobile-nav-links">
-            <li><button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button></li>
-            <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
-            <li><NavLink to="/rejoindre" onClick={closeMenu}>Nous rejoindre</NavLink></li>
-            <li><NavLink to="/business" onClick={closeMenu}>Business</NavLink></li>
-          </ul>
+          <div className="mobile-nav-header">
+            <Link to="/" className="logo-link" onClick={closeMenu}>
+              <img src={logo} alt="Foodmoov" className="logo" />
+              <span className="logo-text">Food<em>moov</em></span>
+            </Link>
+          </div>
+          <div className="mobile-nav-sections">
+            <div className="mobile-nav-section">
+              <h4 className="mobile-nav-title">Navigation</h4>
+              <ul className="mobile-nav-links">
+                <li><button className="mobile-nav-btn" onClick={scrollToFeatures}>Fonctionnalités</button></li>
+                <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
+              </ul>
+            </div>
+
+            <div className="mobile-nav-section">
+              <h4 className="mobile-nav-title">Nous rejoindre</h4>
+              <ul className="mobile-nav-links">
+                <li><NavLink to="/professionnels" onClick={closeMenu}>Je suis foodtrucker</NavLink></li>
+                <li><NavLink to="/devenir-influenceur" onClick={closeMenu}>Devenir influenceur</NavLink></li>
+                <li><NavLink to="/devenir-partenaire" onClick={closeMenu}>Devenir partenaire</NavLink></li>
+              </ul>
+            </div>
+
+            <div className="mobile-nav-section">
+              <h4 className="mobile-nav-title">Espace B2B</h4>
+              <ul className="mobile-nav-links">
+                <li><NavLink to="/business" onClick={closeMenu}>Business</NavLink></li>
+                <li><NavLink to="/entreprise" onClick={closeMenu}>Entreprise privée</NavLink></li>
+                <li><NavLink to="/service-public" onClick={closeMenu}>Service public</NavLink></li>
+              </ul>
+            </div>
+          </div>
 
           <div className="mobile-cta-bottom">
             {authState.isAuthenticated ? (

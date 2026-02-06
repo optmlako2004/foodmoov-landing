@@ -1,0 +1,322 @@
+/* src/pages/BecomeInfluencerPage.css - Style Vitrine Influenceurs */
+
+.influencer-landing {
+  padding-top: 68px;
+}
+
+/* ===== HERO ===== */
+.influencer-hero-landing {
+  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--warm-bg) 100%);
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.influencer-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.influencer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  color: #e65100;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.influencer-hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.influencer-hero-content > p {
+  font-size: 1.2rem;
+  color: var(--body-text);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.influencer-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===== BUTTONS ===== */
+.influencer-landing .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.influencer-landing .btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+}
+
+.influencer-landing .btn-primary.large {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+}
+
+.influencer-landing .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--dark-text);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.influencer-landing .btn-secondary:hover {
+  border-color: var(--dark-text);
+  background: var(--white);
+}
+
+/* ===== SECTION HEADER ===== */
+.influencer-landing .section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+.influencer-landing .section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 12px;
+}
+
+.influencer-landing .section-header p {
+  font-size: 1.1rem;
+  color: var(--body-text);
+}
+
+/* ===== BENEFITS SECTION ===== */
+.influencer-benefits-section {
+  padding: 80px 24px;
+  background: var(--white);
+}
+
+.influencer-benefits-section .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.influencer-benefits-section .benefit-card {
+  background: var(--background-light);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.influencer-benefits-section .benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.influencer-benefits-section .benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.influencer-benefits-section .benefit-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.influencer-benefits-section .benefit-card p {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.influencer-how-section {
+  padding: 80px 24px;
+  background: var(--background-light);
+}
+
+.influencer-how-section .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.influencer-how-section .step-card {
+  text-align: center;
+  position: relative;
+}
+
+.influencer-how-section .step-number {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.influencer-how-section .step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 20px auto;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.influencer-how-section .step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.influencer-how-section .step-card p {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ===== CTA SECTION ===== */
+.influencer-cta-section {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  text-align: center;
+}
+
+.influencer-cta-section .cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.influencer-cta-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.influencer-cta-section p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+}
+
+.influencer-cta-section .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.influencer-cta-section .btn-primary {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+.influencer-cta-section .btn-primary:hover {
+  background: var(--background-light);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .influencer-benefits-section .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .influencer-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .influencer-hero-landing {
+    padding: 70px 20px;
+  }
+
+  .influencer-benefits-section .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .influencer-how-section .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    max-width: 320px;
+  }
+
+  .influencer-cta-section {
+    padding: 70px 20px;
+  }
+
+  .influencer-cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .influencer-landing .section-header h2 {
+    font-size: 1.8rem;
+  }
+}
