@@ -31,7 +31,7 @@ const decodeJWT = (token) => {
     );
     return JSON.parse(jsonPayload);
   } catch (error) {
-    console.error("Erreur décodage JWT:", error);
+    // silent
     return null;
   }
 };
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        console.error("Erreur lors de la vérification du token:", error);
+        // silent
         setAuthState({
           token: null,
           user: null,

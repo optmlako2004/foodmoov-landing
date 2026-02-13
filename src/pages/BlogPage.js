@@ -19,7 +19,7 @@ function BlogPage() {
         const dbPosts = await api.get("/blog/posts");
         setPosts(Array.isArray(dbPosts) ? dbPosts : []);
       } catch (error) {
-        console.error("Erreur serveur lors de la recuperation des articles:", error);
+        // silent
         setPosts([]);
       } finally {
         setLoading(false);

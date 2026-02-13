@@ -24,7 +24,7 @@ function InfluencersListPage() {
       })
       .catch(error => {
         if (!cancelled) {
-          console.error("Erreur chargement influenceurs:", error);
+          // silent
         }
       })
       .finally(() => {

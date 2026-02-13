@@ -18,7 +18,7 @@ function SinglePostPage() {
         const data = await api.get(`/blog/posts/${slug}`);
         setPostData(data);
       } catch (err) {
-        console.error("Erreur lors du chargement de l'article:", err);
+        // silent
         setPostData(null);
       } finally {
         setLoading(false);
