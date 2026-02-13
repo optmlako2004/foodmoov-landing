@@ -7,8 +7,15 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Exécute cette fonction à chaque fois que le 'pathname' (l'URL) change.
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      // Si l'URL contient un hash (#offres-pro, etc.), scroll vers l'élément
+      setTimeout(() => {
+        const el = document.getElementById(window.location.hash.substring(1));
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   // Ce composant ne rend aucun élément visible sur la page.

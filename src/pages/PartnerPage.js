@@ -1,7 +1,5 @@
 // src/pages/PartnerPage.js - Page Vitrine Partenaires
-import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import { api } from "../services/api";
 import "./PartnerPage.css";
 import {
   FaHandshake,
@@ -9,26 +7,10 @@ import {
   FaBullhorn,
   FaChartLine,
   FaArrowRight,
-  FaUsers,
-  FaStar,
-  FaTruckMoving,
 } from "react-icons/fa";
 
 function PartnerPage() {
   const { getLoginUrl, APP_URL } = useAuth();
-  const [stats, setStats] = useState({ partners: 0, influencers: 0, pros: 0 });
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const data = await api.get("/stats");
-        setStats(data);
-      } catch (error) {
-        console.error("Erreur chargement stats:", error);
-      }
-    };
-    fetchStats();
-  }, []);
 
   return (
     <div className="partner-landing">
@@ -120,27 +102,6 @@ function PartnerPage() {
             <div className="step-icon"><FaChartLine /></div>
             <h3>Développez-vous</h3>
             <p>Suivez vos performances et touchez de nouveaux clients.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="partner-stats-section">
-        <div className="stats-container">
-          <div className="stat-item">
-            <FaTruckMoving className="stat-icon" />
-            <span className="stat-number">{stats.pros}+</span>
-            <span className="stat-label">Food trucks</span>
-          </div>
-          <div className="stat-item">
-            <FaUsers className="stat-icon" />
-            <span className="stat-number">{stats.partners}</span>
-            <span className="stat-label">Partenaires</span>
-          </div>
-          <div className="stat-item">
-            <FaStar className="stat-icon" />
-            <span className="stat-number">{stats.influencers}</span>
-            <span className="stat-label">Influenceurs</span>
           </div>
         </div>
       </section>

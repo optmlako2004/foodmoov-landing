@@ -235,47 +235,6 @@
   margin: 0 auto;
 }
 
-/* ===== STATS SECTION ===== */
-.pro-stats-section {
-  padding: 60px 24px;
-  background: var(--dark-text);
-}
-
-.stats-container {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  max-width: 800px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: var(--white);
-}
-
-.stat-icon {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: 12px;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 4px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #999;
-}
-
 /* ===== CTA SECTION ===== */
 .pro-cta-section {
   padding: 100px 24px;
@@ -319,6 +278,175 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== PRICING SECTION ===== */
+.pro-pricing-section {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.pricing-single {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card-featured {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(252, 169, 34, 0.15);
+  width: 100%;
+}
+
+.pricing-card-featured:hover {
+  box-shadow: 0 16px 40px rgba(252, 169, 34, 0.2);
+}
+
+.pricing-popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary-color), #ff8c00);
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pricing-card-header {
+  margin-bottom: 24px;
+}
+
+.pricing-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.pricing-icon.featured {
+  background: linear-gradient(135deg, var(--primary-color), #ff8c00);
+  color: #fff;
+}
+
+.pricing-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 4px;
+}
+
+.pricing-subtitle {
+  font-size: 0.9rem;
+  color: var(--body-text);
+}
+
+.pricing-price {
+  margin-bottom: 28px;
+  padding: 16px 0;
+  border-top: 1px solid #f0e8dc;
+  border-bottom: 1px solid #f0e8dc;
+}
+
+.price-amount {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: var(--body-text);
+  font-weight: 400;
+}
+
+.pricing-features {
+  list-style: none;
+  text-align: left;
+  margin: 0 0 28px 0;
+  padding: 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  color: var(--body-text);
+  line-height: 1.4;
+}
+
+.pricing-features li svg {
+  color: #4caf50;
+  margin-top: 3px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.pricing-features .feature-highlight {
+  color: var(--dark-text);
+}
+
+.pricing-features .feature-highlight strong {
+  color: var(--primary-color);
+}
+
+.pricing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80%;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.pricing-btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.pricing-btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(252, 169, 34, 0.35);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .benefits-grid {
@@ -347,10 +475,6 @@
     max-width: 320px;
   }
 
-  .stats-container {
-    gap: 40px;
-  }
-
   .pro-cta-section {
     padding: 70px 20px;
   }
@@ -361,5 +485,9 @@
 
   .section-header h2 {
     font-size: 1.8rem;
+  }
+
+  .pricing-single {
+    max-width: 100%;
   }
 }

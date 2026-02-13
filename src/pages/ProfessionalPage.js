@@ -12,23 +12,19 @@ import {
   FaMapMarkerAlt,
   FaUsers,
   FaMobileAlt,
-  FaChartLine,
+  FaCheck,
+  FaCrown,
+  FaStar,
 } from "react-icons/fa";
 
 function ProfessionalPage() {
   const { getLoginUrl, APP_URL } = useAuth();
-  const [stats, setStats] = useState({ clients: 0, pros: 0, cities: 3 });
+  const [proPrice, setProPrice] = useState(2000); // fallback 2000 centimes
 
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const data = await api.get("/stats");
-        setStats(data);
-      } catch (error) {
-        console.error("Erreur chargement stats:", error);
-      }
-    };
-    fetchStats();
+    api.get('/settings/pro-price').then(data => {
+      if (data?.price) setProPrice(data.price);
+    }).catch(() => {}); // fallback silencieux
   }, []);
 
   return (
@@ -125,23 +121,37 @@ function ProfessionalPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="pro-stats-section">
-        <div className="stats-container">
-          <div className="stat-item">
-            <FaChartLine className="stat-icon" />
-            <span className="stat-number">{stats.pros}+</span>
-            <span className="stat-label">Food trucks inscrits</span>
-          </div>
-          <div className="stat-item">
-            <FaUsers className="stat-icon" />
-            <span className="stat-number">{stats.clients}+</span>
-            <span className="stat-label">Clients potentiels</span>
-          </div>
-          <div className="stat-item">
-            <FaMapMarkerAlt className="stat-icon" />
-            <span className="stat-number">{stats.cities}</span>
-            <span className="stat-label">Villes couvertes</span>
+      {/* Offre Pro */}
+      <section className="pro-pricing-section" id="offres-pro">
+        <div className="section-header">
+          <h2>L'offre Pro</h2>
+          <p>Boostez votre visibilité et développez votre activité</p>
+        </div>
+        <div className="pricing-single">
+          <div className="pricing-card pricing-card-featured" data-aos="fade-up">
+            <div className="pricing-popular-badge"><FaCrown /> Pro</div>
+            <div className="pricing-card-header">
+              <div className="pricing-icon featured"><FaStar /></div>
+              <h3>Pro</h3>
+              <p className="pricing-subtitle">Pour booster votre visibilité</p>
+            </div>
+            <div className="pricing-price">
+              <span className="price-amount">{(proPrice / 100).toFixed(2).replace(/\.?0+$/, '')}€</span>
+              <span className="price-period">/mois</span>
+            </div>
+            <ul className="pricing-features">
+              <li className="feature-highlight"><FaCheck /> <strong>Site vitrine personnalisé via CMS</strong></li>
+              <li className="feature-highlight"><FaCheck /> <strong>Sous-domaine gratuit</strong> (votretruck.foodmoov.com)</li>
+              <li><FaCheck /> Accès aux emplacements proposés par les mairies</li>
+              <li><FaCheck /> Demandes d'influenceurs</li>
+              <li><FaCheck /> Dashboard avancé avec statistiques</li>
+              <li><FaCheck /> Mise en avant sur la carte</li>
+              <li><FaCheck /> Badge "Pro" vérifié</li>
+              <li><FaCheck /> Support prioritaire</li>
+            </ul>
+            <a href={`${APP_URL}/inscription?role=pro`} className="pricing-btn pricing-btn-primary" target="_blank" rel="noopener noreferrer">
+              Passer au Pro <FaArrowRight />
+            </a>
           </div>
         </div>
       </section>
@@ -149,8 +159,8 @@ function ProfessionalPage() {
       {/* CTA Final */}
       <section className="pro-cta-section">
         <div className="cta-content">
-          <h2>Prêt à faire décoller votre activité ?</h2>
-          <p>Rejoignez Foodmoov gratuitement et commencez à attirer de nouveaux clients dès aujourd'hui.</p>
+          <h2>Pret a faire decoller votre activite ?</h2>
+          <p>Rejoignez Foodmoov et commencez a attirer de nouveaux clients des aujourd'hui.</p>
           <div className="cta-buttons">
             <a href={`${APP_URL}/inscription?role=pro`} className="btn-primary large" target="_blank" rel="noopener noreferrer">
               Commencer gratuitement <FaArrowRight />
