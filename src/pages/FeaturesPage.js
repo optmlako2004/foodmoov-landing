@@ -86,6 +86,14 @@ function FeaturesPage() {
 
   return (
     <div className="features-landing">
+      <title>Fonctionnalités - Carte, Menus, Avis et plus | Foodmoov</title>
+      <meta name="description" content="Découvrez toutes les fonctionnalités de Foodmoov : carte interactive, menus détaillés, avis vérifiés, alertes en temps réel et espace professionnel." />
+      <meta property="og:title" content="Fonctionnalités - Carte, Menus, Avis et plus | Foodmoov" />
+      <meta property="og:description" content="Carte interactive, menus détaillés, avis vérifiés, alertes en temps réel et espace professionnel pour les food truckers." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites" />
       {/* Hero Section */}
       <section className="features-hero">
         <div className="features-hero-content">

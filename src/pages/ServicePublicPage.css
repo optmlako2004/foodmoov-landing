@@ -72,7 +72,7 @@
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-public-hero .cta-primary:hover,
@@ -95,7 +95,7 @@
   font-size: 1rem;
   text-decoration: none;
   border: 2px solid var(--dark-text);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .service-public-hero .cta-secondary:hover,
@@ -172,7 +172,7 @@
   background: var(--white);
   padding: 35px 30px;
   border-radius: 16px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-public-benefits .benefit-card:hover {
@@ -224,7 +224,7 @@
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-public-usecases .usecase-card:hover {

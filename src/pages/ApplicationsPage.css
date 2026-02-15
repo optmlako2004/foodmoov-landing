@@ -206,7 +206,7 @@
   background: var(--white);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .platform-card:hover {
@@ -226,8 +226,9 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .app-choice {
-    flex-direction: column !important;
+  .applications-page .app-choice,
+  .app-choice.pro {
+    flex-direction: column;
     gap: 30px;
     padding: 30px;
   }

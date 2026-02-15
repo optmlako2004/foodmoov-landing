@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { blogCategories, getCategoryById } from "../data/blogCategories";
 import { api } from "../services/api";
+import { useToast } from "../context/ToastContext";
 import "./BlogPage.css";
 
 function BlogPage() {
+  const toast = useToast();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +21,7 @@ function BlogPage() {
         const dbPosts = await api.get("/blog/posts");
         setPosts(Array.isArray(dbPosts) ? dbPosts : []);
       } catch (error) {
-        // silent
+        toast.error("Impossible de charger les articles");
         setPosts([]);
       } finally {
         setLoading(false);
@@ -64,7 +66,14 @@ function BlogPage() {
 
   return (
     <div className="blog-page">
-      <title>Blog Street-Food - Conseils et Actualites | Foodmoov</title>
+      <title>Blog Street-Food - Conseils et Actualités | Foodmoov</title>
+      <meta name="description" content="Découvrez nos articles sur la street-food : conseils pour food truckers, tendances culinaires, guides pour entreprises et collectivités." />
+      <meta property="og:title" content="Blog Street-Food - Conseils et Actualités | Foodmoov" />
+      <meta property="og:description" content="Articles, conseils et actualités sur le monde de la street-food et des food trucks en France." />
+      <meta property="og:url" content="https://foodmoov.com/blog" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/blog" />
 
       <div className="blog-page-header">
         <h1>Le Blog de la Street-Food</h1>

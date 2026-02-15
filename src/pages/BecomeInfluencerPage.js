@@ -22,6 +22,12 @@ function BecomeInfluencerPage() {
         name="description"
         content="Devenez influenceur Foodmoov et partagez votre passion pour la street food avec notre communauté."
       />
+      <meta property="og:title" content="Devenir Influenceur | Foodmoov" />
+      <meta property="og:description" content="Devenez influenceur Foodmoov et partagez votre passion pour la street food avec notre communauté." />
+      <meta property="og:url" content="https://foodmoov.com/devenir-influenceur" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/devenir-influenceur" />
 
       {/* Hero Section */}
       <section className="influencer-hero-landing">

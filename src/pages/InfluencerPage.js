@@ -12,7 +12,14 @@ const APP_URL = import.meta.env.VITE_APP_URL || "https://app.foodmoov.com";
 function InfluencerPage() {
   return (
     <div className="influencer-page">
-      <title>Demander un Influenceur - Foodmoov</title>
+      <title>Demander un Influenceur pour votre Food Truck | Foodmoov</title>
+      <meta name="description" content="Attirez plus de clients en invitant des influenceurs food dans votre food truck. Dégustation offerte en échange de visibilité sur les réseaux sociaux." />
+      <meta property="og:title" content="Demander un Influenceur pour votre Food Truck | Foodmoov" />
+      <meta property="og:description" content="Invitez des influenceurs food dans votre food truck et gagnez en visibilité sur les réseaux sociaux." />
+      <meta property="og:url" content="https://foodmoov.com/influenceurs" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/influenceurs" />
       <section className="influencer-hero">
         <div className="hero-content" data-aos="fade-up">
           <h1>Recevez des influenceurs</h1>

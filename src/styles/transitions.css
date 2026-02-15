@@ -62,7 +62,7 @@ button[type="submit"],
 .btn {
   position: relative;
   overflow: hidden;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Effet au survol amélioré */
@@ -100,7 +100,7 @@ button[type="submit"]:active,
 .blog-card,
 .influencer-card,
 .partner-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover,
@@ -145,7 +145,7 @@ button[type="submit"]:active,
 input,
 textarea,
 select {
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 input:focus,
@@ -254,7 +254,7 @@ html {
    ================================ */
 
 .app-header {
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-header.scrolled {

@@ -122,6 +122,30 @@ const faqItems = [
 function HelpPage() {
   return (
     <div className="help-page">
+      <title>Centre d'Aide - Questions Fréquentes | Foodmoov</title>
+      <meta name="description" content="Trouvez des réponses à vos questions sur Foodmoov : utilisation, inscription food trucker, événements entreprise, programme influenceurs et plus." />
+      <meta property="og:title" content="Centre d'Aide - Questions Fréquentes | Foodmoov" />
+      <meta property="og:description" content="Trouvez des réponses à vos questions sur Foodmoov : utilisation, food truckers, entreprises, influenceurs." />
+      <meta property="og:url" content="https://foodmoov.com/aide" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/aide" />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.flatMap(cat =>
+            cat.questions.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+              }
+            }))
+          )
+        })}
+      </script>
       <div className="help-hero">
         <FaQuestionCircle className="help-icon" />
         <h1>Centre d'aide</h1>

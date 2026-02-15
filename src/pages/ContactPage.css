@@ -171,7 +171,7 @@
   font-size: 1rem;
   color: var(--dark-text);
   background: var(--white);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
@@ -233,7 +233,7 @@
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   margin-top: 8px;
 }
 

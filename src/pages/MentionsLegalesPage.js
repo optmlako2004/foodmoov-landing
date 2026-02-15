@@ -5,6 +5,14 @@ import "./MentionsLegalesPage.css";
 function MentionsLegalesPage() {
   return (
     <div className="mentions-landing">
+      <title>Mentions Légales | Foodmoov</title>
+      <meta name="description" content="Mentions légales du site Foodmoov : éditeur, hébergeur, propriété intellectuelle, collecte de données et cookies." />
+      <meta property="og:title" content="Mentions Légales | Foodmoov" />
+      <meta property="og:description" content="Mentions légales du site Foodmoov : informations sur l'éditeur, l'hébergeur et la collecte de données." />
+      <meta property="og:url" content="https://foodmoov.com/mentions-legales" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/mentions-legales" />
       {/* Hero Section */}
       <section className="mentions-hero">
         <div className="mentions-hero-content">

@@ -23,7 +23,12 @@ function AboutPage() {
         name="description"
         content="Découvrez l'histoire de M. Mehar Jemai, fondateur de Foodmoov, et notre mission pour connecter les amateurs de street-food avec les chefs."
       />
-      {/* --- FIN DE LA MODIFICATION --- */}
+      <meta property="og:title" content="Notre Histoire - Foodmoov" />
+      <meta property="og:description" content="Découvrez l'histoire de Foodmoov et notre mission pour connecter les amateurs de street-food avec les chefs." />
+      <meta property="og:url" content="https://foodmoov.com/a-propos" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/a-propos" />
 
       <div className="about-container">
         <div className="about-header">

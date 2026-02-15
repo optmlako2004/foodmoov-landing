@@ -103,15 +103,15 @@
   gap: 12px;
 }
 
-.cta-button {
+.vitrine-header .cta-button {
   background-color: var(--primary-color);
   color: var(--white);
   padding: 9px 22px;
   border-radius: 50px;
-  text-decoration: none !important;
+  text-decoration: none;
   font-weight: 600;
   white-space: nowrap;
-  transition: all 0.25s;
+  transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
   border: 1.5px solid transparent;
   cursor: pointer;
   display: inline-flex;
@@ -211,11 +211,11 @@
   gap: 14px;
 }
 
-.mobile-nav-links a {
+.vitrine-header .mobile-nav-links a {
   font-size: 1.05rem;
   font-weight: 500;
   color: #d4c5b0;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: color 0.25s;
 }
 
@@ -227,11 +227,11 @@
   color: var(--primary-color);
 }
 
-.mobile-nav-btn {
+.vitrine-header .mobile-nav-btn {
   font-size: 1.05rem;
   font-weight: 500;
   color: #d4c5b0;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: color 0.25s;
   background: none;
   border: none;
@@ -281,9 +281,11 @@
 
 /* Masquer le menu mobile en desktop */
 @media (min-width: 769px) {
+  .vitrine-header ~ .mobile-nav,
+  .vitrine-header ~ .backdrop,
   .mobile-nav,
   .backdrop {
-    display: none !important;
+    display: none;
   }
 }
 

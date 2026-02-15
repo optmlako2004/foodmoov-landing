@@ -45,7 +45,7 @@
   border-radius: 20px;
   padding: 40px 32px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
 }

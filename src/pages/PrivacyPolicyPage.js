@@ -10,6 +10,7 @@ function PrivacyPolicyPage() {
         name="description"
         content="Consultez la politique de confidentialité de Foodmoov concernant la collecte et l'utilisation de vos données personnelles."
       />
+      <link rel="canonical" href="https://foodmoov.com/confidentialite" />
 
       <div className="policy-header">
         <h1>Politique de Confidentialité</h1>

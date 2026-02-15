@@ -1,6 +1,7 @@
 // src/pages/ProfessionalPage.js - Page Vitrine Pro (distincte de l'app)
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 import { api } from "../services/api";
 import "./ProfessionalPage.css";
 import {
@@ -19,12 +20,13 @@ import {
 
 function ProfessionalPage() {
   const { getLoginUrl, APP_URL } = useAuth();
+  const toast = useToast();
   const [proPrice, setProPrice] = useState(2000); // fallback 2000 centimes
 
   useEffect(() => {
     api.get('/settings/pro-price').then(data => {
       if (data?.price) setProPrice(data.price);
-    }).catch(() => {}); // fallback silencieux
+    }).catch(() => { toast.error("Impossible de charger le prix de l'abonnement"); });
   }, []);
 
   return (
@@ -34,6 +36,12 @@ function ProfessionalPage() {
         name="description"
         content="Rejoignez Foodmoov Driver. Donnez à votre food truck la visibilité qu'il mérite et connectez-vous à des milliers de clients."
       />
+      <meta property="og:title" content="Espace Professionnel - Foodmoov Driver | Foodmoov" />
+      <meta property="og:description" content="Rejoignez Foodmoov Driver et donnez à votre food truck la visibilité qu'il mérite." />
+      <meta property="og:url" content="https://foodmoov.com/professionnels" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/professionnels" />
 
       {/* Hero Section */}
       <section className="pro-hero-landing">

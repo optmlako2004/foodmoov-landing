@@ -40,6 +40,14 @@ function SecurityPage() {
 
   return (
     <div className="security-landing">
+      <title>Sécurité et Protection des Données | Foodmoov</title>
+      <meta name="description" content="Découvrez comment Foodmoov protège vos données : chiffrement HTTPS, mots de passe hashés, authentification JWT et conformité RGPD." />
+      <meta property="og:title" content="Sécurité et Protection des Données | Foodmoov" />
+      <meta property="og:description" content="Découvrez comment Foodmoov protège vos données avec les meilleures pratiques de sécurité et la conformité RGPD." />
+      <meta property="og:url" content="https://foodmoov.com/securite" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/securite" />
       {/* Hero Section */}
       <section className="security-hero">
         <div className="security-hero-content">

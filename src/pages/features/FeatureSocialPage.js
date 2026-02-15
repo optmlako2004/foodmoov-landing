@@ -6,6 +6,14 @@ import "./FeaturePage.css";
 function FeatureSocialPage() {
   return (
     <div className="feature-page">
+      <title>Partage Social - Recommandez vos Food Trucks | Foodmoov</title>
+      <meta name="description" content="Partagez vos food trucks préférés sur Instagram, Facebook, X et WhatsApp. Recommandez vos découvertes culinaires à vos amis en un clic." />
+      <meta property="og:title" content="Partage Social - Recommandez vos Food Trucks | Foodmoov" />
+      <meta property="og:description" content="Partagez vos food trucks préférés sur les réseaux sociaux et recommandez vos découvertes à vos amis." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/partage" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/partage" />
       <div className="feature-hero">
         <div className="feature-hero-icon">
           <FaShareAlt />

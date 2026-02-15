@@ -19,6 +19,12 @@ function PartnerPage() {
         name="description"
         content="Devenez partenaire Foodmoov et bénéficiez d'une visibilité auprès de notre communauté de gourmands et de food truckers."
       />
+      <meta property="og:title" content="Devenir Partenaire | Foodmoov" />
+      <meta property="og:description" content="Devenez partenaire Foodmoov et bénéficiez d'une visibilité auprès de notre communauté de gourmands." />
+      <meta property="og:url" content="https://foodmoov.com/devenir-partenaire" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/devenir-partenaire" />
 
       {/* Hero Section */}
       <section className="partner-hero-landing">

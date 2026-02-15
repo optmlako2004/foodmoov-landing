@@ -101,6 +101,14 @@ function ServicePublicPage() {
 
   return (
     <div className="service-public-page">
+      <title>Emplacements Food Trucks pour Collectivités | Foodmoov</title>
+      <meta name="description" content="Mairies et collectivités : proposez des emplacements aux food trucks sur votre commune. Marchés, festivals, zones d'activité. Candidatures vérifiées." />
+      <meta property="og:title" content="Emplacements Food Trucks pour Collectivités | Foodmoov" />
+      <meta property="og:description" content="Collectivités : proposez des emplacements aux food trucks sur votre territoire et recevez des candidatures vérifiées." />
+      <meta property="og:url" content="https://foodmoov.com/service-public" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/service-public" />
       {/* Hero Section */}
       <section className="service-public-hero">
         <div className="hero-content" data-aos="fade-up">

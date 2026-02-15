@@ -31,7 +31,7 @@ const decodeJWT = (token) => {
     );
     return JSON.parse(jsonPayload);
   } catch (error) {
-    // silent
+    // Token invalide — pas de toast ici car AuthContext est hors du ToastProvider
     return null;
   }
 };
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        // silent
+        // Token invalide — pas de toast ici car AuthContext est hors du ToastProvider
         setAuthState({
           token: null,
           user: null,

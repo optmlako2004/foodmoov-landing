@@ -482,7 +482,7 @@
   color: var(--white);
   padding: 12px 22px;
   border-radius: 12px;
-  transition: all 0.25s;
+  transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   text-decoration: none;
 }
@@ -666,7 +666,7 @@
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
-  transition: all 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   border: none;
   font-family: inherit;
@@ -839,7 +839,7 @@
   border-radius: 20px;
   padding: 36px 28px;
   text-align: center;
-  transition: all 0.3s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
 }
@@ -877,7 +877,7 @@
   margin: 0 auto 20px;
   font-size: 1.7rem;
   color: var(--primary-color);
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .audience-card:hover .audience-icon {
@@ -937,7 +937,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: background-color 0.25s, color 0.25s;
   font-family: inherit;
 }
 
@@ -972,7 +972,7 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  transition: all 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s;
   text-decoration: none;
   cursor: pointer;
 }

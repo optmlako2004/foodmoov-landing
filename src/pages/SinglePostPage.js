@@ -4,10 +4,12 @@ import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { getCategoryById } from "../data/blogCategories";
 import { api } from "../services/api";
+import { useToast } from "../context/ToastContext";
 import "./SinglePostPage.css";
 
 function SinglePostPage() {
   const { slug } = useParams();
+  const toast = useToast();
   const [postData, setPostData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,7 +20,7 @@ function SinglePostPage() {
         const data = await api.get(`/blog/posts/${slug}`);
         setPostData(data);
       } catch (err) {
-        // silent
+        toast.error("Impossible de charger l'article");
         setPostData(null);
       } finally {
         setLoading(false);
@@ -67,6 +69,38 @@ function SinglePostPage() {
   return (
     <div className="single-post-page">
       <title>{`${post.title} | Foodmoov`}</title>
+      <meta name="description" content={post.excerpt || `${post.title} - Article du blog Foodmoov sur la street-food.`} />
+      <meta property="og:title" content={`${post.title} | Foodmoov`} />
+      <meta property="og:description" content={post.excerpt || `${post.title} - Article du blog Foodmoov.`} />
+      <meta property="og:url" content={`https://foodmoov.com/blog/${post.slug}`} />
+      <meta property="og:image" content={post.main_image_url || "https://foodmoov.com/logo.png"} />
+      <meta property="og:type" content="article" />
+      <link rel="canonical" href={`https://foodmoov.com/blog/${post.slug}`} />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": post.title,
+          "image": post.main_image_url || "https://foodmoov.com/logo.png",
+          "datePublished": post.published_at,
+          "author": {
+            "@type": "Person",
+            "name": `${post.first_name} ${post.last_name}`
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Foodmoov",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://foodmoov.com/logo.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://foodmoov.com/blog/${post.slug}`
+          }
+        })}
+      </script>
 
       <div className="post-container">
         
@@ -80,8 +114,8 @@ function SinglePostPage() {
                     />
                     {slides.length > 1 && (
                         <>
-                            <button className="slider-btn prev" onClick={prevSlide}><FaChevronLeft /></button>
-                            <button className="slider-btn next" onClick={nextSlide}><FaChevronRight /></button>
+                            <button className="slider-btn prev" onClick={prevSlide} aria-label="Image précédente"><FaChevronLeft /></button>
+                            <button className="slider-btn next" onClick={nextSlide} aria-label="Image suivante"><FaChevronRight /></button>
                             <div className="slider-dots">
                                 {slides.map((_, idx) => (
                                     <span key={idx} className={`dot ${idx === currentSlide ? 'active' : ''}`} onClick={() => setCurrentSlide(idx)}></span>

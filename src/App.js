@@ -60,21 +60,41 @@ function AppContent() {
 
   return (
     <div className="App">
+      <a href="#main-content" className="skip-link">Aller au contenu principal</a>
       <script type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Foodmoov",
-            "url": "https://foodmoov.com",
-            "logo": "https://foodmoov.com/logo.png"
-          }
-        `}
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "name": "Foodmoov",
+              "url": "https://foodmoov.com",
+              "logo": "https://foodmoov.com/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@foodmoov.com",
+                "contactType": "customer service",
+                "availableLanguage": "French"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "name": "Foodmoov",
+              "url": "https://foodmoov.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://app.foodmoov.com/recherche?address={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          ]
+        })}
       </script>
 
       <Header />
       <ScrollToTop />
 
+      <main id="main-content">
       <Suspense fallback={<PageSkeleton />}>
         <Routes>
           {/* Page d'accueil */}
@@ -124,6 +144,7 @@ function AppContent() {
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
+      </main>
 
       {!shouldHideFooter && <Footer />}
     </div>

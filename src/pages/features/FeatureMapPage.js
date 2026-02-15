@@ -8,6 +8,14 @@ import mockupImage from "../../assets/app-map.png";
 function FeatureMapPage() {
   return (
     <div className="feature-page">
+      <title>Carte Interactive des Food Trucks en Temps Réel | Foodmoov</title>
+      <meta name="description" content="Localisez les food trucks près de vous en temps réel grâce à la carte interactive Foodmoov. Position GPS, horaires et itinéraire." />
+      <meta property="og:title" content="Carte Interactive des Food Trucks en Temps Réel | Foodmoov" />
+      <meta property="og:description" content="Localisez les food trucks près de vous en temps réel grâce à la carte interactive Foodmoov." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/carte" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/carte" />
       <div className="feature-hero">
         <div className="feature-hero-icon">
           <FaMapMarkerAlt />

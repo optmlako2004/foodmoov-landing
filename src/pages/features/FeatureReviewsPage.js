@@ -6,6 +6,14 @@ import "./FeaturePage.css";
 function FeatureReviewsPage() {
   return (
     <div className="feature-page">
+      <title>Avis et Notes des Food Trucks - Avis Vérifiés | Foodmoov</title>
+      <meta name="description" content="Consultez les avis vérifiés et notes des food trucks sur Foodmoov. Classement par étoiles, photos des plats et retours authentiques des gourmands." />
+      <meta property="og:title" content="Avis et Notes des Food Trucks - Avis Vérifiés | Foodmoov" />
+      <meta property="og:description" content="Consultez les avis vérifiés et notes des food trucks pour choisir en toute confiance." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/avis" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/avis" />
       <div className="feature-hero">
         <div className="feature-hero-icon">
           <FaStar />

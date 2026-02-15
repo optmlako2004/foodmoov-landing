@@ -8,6 +8,14 @@ import mockupImage from "../../assets/menu.png";
 function FeatureMenusPage() {
   return (
     <div className="feature-page">
+      <title>Menus et Photos des Food Trucks | Foodmoov</title>
+      <meta name="description" content="Consultez les menus complets des food trucks avec photos, prix, ingrédients et allergènes. Découvrez les options végétariennes et vegan." />
+      <meta property="og:title" content="Menus et Photos des Food Trucks | Foodmoov" />
+      <meta property="og:description" content="Consultez les menus complets des food trucks avec photos, prix et ingrédients avant de vous déplacer." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/menus" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/menus" />
       <div className="feature-hero">
         <div className="feature-hero-icon">
           <FaUtensils />

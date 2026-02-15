@@ -25,6 +25,12 @@ function ClientPage() {
         name="description"
         content="Téléchargez l'application Foodmoov pour trouver les meilleurs food trucks près de chez vous en temps réel."
       />
+      <meta property="og:title" content="Espace Client - L'Application Foodmoov" />
+      <meta property="og:description" content="Téléchargez Foodmoov pour trouver les meilleurs food trucks près de chez vous en temps réel." />
+      <meta property="og:url" content="https://foodmoov.com/espace-client" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/espace-client" />
 
       {/* --- Section Héros pour les Clients --- */}
       <section className="client-hero">

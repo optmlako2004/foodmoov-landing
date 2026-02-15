@@ -8,6 +8,14 @@ import mockupImage from "../../assets/acceuil.png";
 function FeatureProsPage() {
   return (
     <div className="feature-page">
+      <title>Espace Professionnel Food Trucker - Foodmoov Driver | Foodmoov</title>
+      <meta name="description" content="Gérez votre food truck avec Foodmoov Driver : partagez votre position GPS, gérez vos menus, recevez des demandes et développez votre clientèle." />
+      <meta property="og:title" content="Espace Professionnel Food Trucker - Foodmoov Driver | Foodmoov" />
+      <meta property="og:description" content="Gérez votre food truck avec Foodmoov Driver : position GPS, menus, statistiques et demandes d'influenceurs." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/professionnels" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/professionnels" />
       <div className="feature-hero">
         <div className="feature-hero-icon" style={{ background: "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)", color: "#e65100" }}>
           <FaTruckMoving />

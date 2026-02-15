@@ -6,6 +6,14 @@ import "./FeaturePage.css";
 function FeatureAlertsPage() {
   return (
     <div className="feature-page">
+      <title>Alertes et Notifications Food Trucks en Temps Réel | Foodmoov</title>
+      <meta name="description" content="Recevez des notifications push dès que votre food truck préféré est à proximité. Alertes de proximité configurables et suivi de vos favoris." />
+      <meta property="og:title" content="Alertes et Notifications Food Trucks en Temps Réel | Foodmoov" />
+      <meta property="og:description" content="Recevez des notifications push dès que votre food truck préféré est à proximité." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/alertes" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/alertes" />
       <div className="feature-hero">
         <div className="feature-hero-icon">
           <FaBell />

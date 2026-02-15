@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../services/api"; // <-- IMPORT DU NOUVEAU SERVICE
+import { useToast } from "../context/ToastContext";
 import "./InfluencersListPage.css";
 import { FaHeart } from "react-icons/fa";
 
@@ -12,6 +13,7 @@ import twitterLogo from "../assets/twitter.png";
 import defaultAvatar from "../assets/logo.png";
 
 function InfluencersListPage() {
+  const toast = useToast();
   const [influencers, setInfluencers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,7 +26,7 @@ function InfluencersListPage() {
       })
       .catch(error => {
         if (!cancelled) {
-          // silent
+          toast.error("Impossible de charger les influenceurs");
         }
       })
       .finally(() => {
@@ -38,6 +40,12 @@ function InfluencersListPage() {
     <div className="influencers-page">
       <title>Nos Influenceurs - Foodmoov</title>
       <meta name="description" content="Découvrez les créateurs de contenu qui soutiennent la street-food et les food trucks sur Foodmoov." />
+      <meta property="og:title" content="Nos Influenceurs - Foodmoov" />
+      <meta property="og:description" content="Découvrez les créateurs de contenu qui soutiennent la street-food et les food trucks sur Foodmoov." />
+      <meta property="og:url" content="https://foodmoov.com/influenceurs" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/influenceurs" />
 
       <section className="influencers-hero">
         <div className="hero-content">

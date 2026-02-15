@@ -9,6 +9,14 @@ function FeatureInfluencersPage() {
 
   return (
     <div className="feature-page">
+      <title>Programme Influenceurs Food - Dégustations Offertes | Foodmoov</title>
+      <meta name="description" content="Rejoignez le programme influenceurs Foodmoov : recevez des dégustations offertes dans les food trucks partenaires en échange de visibilité sur vos réseaux." />
+      <meta property="og:title" content="Programme Influenceurs Food - Dégustations Offertes | Foodmoov" />
+      <meta property="og:description" content="Rejoignez le programme influenceurs Foodmoov et recevez des dégustations offertes en échange de visibilité." />
+      <meta property="og:url" content="https://foodmoov.com/fonctionnalites/influenceurs" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/fonctionnalites/influenceurs" />
       <div className="feature-hero">
         <div className="feature-hero-icon" style={{ background: "linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%)", color: "#c2185b" }}>
           <FaStar />

@@ -85,7 +85,7 @@
   font-weight: bold;
   font-size: 15px;
   display: inline-block; /* Important pour le centrage */
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid transparent;
   width: fit-content; /* Largeur adaptée au texte */
   margin: 0 auto; /* Centrer le bouton */

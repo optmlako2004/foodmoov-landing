@@ -1,5 +1,5 @@
 // src/pages/HomePage.js - Landing Page Vitrine
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -114,13 +114,13 @@ function HomePage() {
   const searchBarRef = useRef(null);
   const placesSearch = useGooglePlacesSearch();
 
-  const handleAddrInput = (e) => {
+  const handleAddrInput = useCallback((e) => {
     const val = e.target.value;
     setSearchAddress(val);
     placesSearch.search(val);
-  };
+  }, [placesSearch]);
 
-  const handleAddrSelect = async (suggestion) => {
+  const handleAddrSelect = useCallback(async (suggestion) => {
     setSearchAddress(suggestion.label);
     placesSearch.close();
     const details = await placesSearch.resolvePlace(suggestion.placeId);
@@ -129,18 +129,18 @@ function HomePage() {
     } else {
       window.location.href = `${APP_URL}/recherche?address=${encodeURIComponent(suggestion.label)}`;
     }
-  };
+  }, [APP_URL, placesSearch]);
 
-  const handleAddrSubmit = (e) => {
+  const handleAddrSubmit = useCallback((e) => {
     e.preventDefault();
     if (placesSearch.suggestions.length > 0) {
       handleAddrSelect(placesSearch.suggestions[0]);
     } else if (searchAddress.length >= 3) {
       window.location.href = `${APP_URL}/recherche?address=${encodeURIComponent(searchAddress)}`;
     }
-  };
+  }, [placesSearch.suggestions, handleAddrSelect, searchAddress, APP_URL]);
 
-  const handleNotifySubmit = async (e) => {
+  const handleNotifySubmit = useCallback(async (e) => {
     e.preventDefault();
     if (!notifyEmail) return;
     setNotifyLoading(true);
@@ -154,7 +154,12 @@ function HomePage() {
     } finally {
       setNotifyLoading(false);
     }
-  };
+  }, [notifyEmail, toast]);
+
+  // Mémoiser les tableaux dupliqués pour les marquees
+  const marqueeRow1Doubled = useMemo(() => [...marqueeRow1, ...marqueeRow1], []);
+  const marqueeRow2Doubled = useMemo(() => [...marqueeRow2, ...marqueeRow2], []);
+  const foodStripDoubled = useMemo(() => [...foodOnlyItems, ...foodOnlyItems], []);
 
   useEffect(() => {
     if (location.state?.scrollTo === "fonctionnalites") {
@@ -179,6 +184,14 @@ function HomePage() {
 
   return (
     <div className="vitrine-home">
+      <title>Foodmoov - Trouvez les meilleurs Food Trucks près de chez vous</title>
+      <meta name="description" content="Foodmoov vous aide à localiser les food trucks autour de vous en temps réel, consulter leurs menus et découvrir la street-food en France." />
+      <meta property="og:title" content="Foodmoov - Trouvez les meilleurs Food Trucks près de chez vous" />
+      <meta property="og:description" content="Localisez les food trucks en temps réel, consultez les menus et découvrez la street-food en France avec Foodmoov." />
+      <meta property="og:url" content="https://foodmoov.com/" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/" />
       {/* ===== HERO ===== */}
       <section className="hero">
         <div
@@ -236,7 +249,7 @@ function HomePage() {
       <section className="food-marquee">
         <div className="marquee-row">
           <div className="marquee-track marquee-left">
-            {[...marqueeRow1, ...marqueeRow1].map((item, i) => (
+            {marqueeRow1Doubled.map((item, i) => (
               <div className="marquee-card" key={`r1-${i}`}>
                 <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
               </div>
@@ -245,7 +258,7 @@ function HomePage() {
         </div>
         <div className="marquee-row">
           <div className="marquee-track marquee-right">
-            {[...marqueeRow2, ...marqueeRow2].map((item, i) => (
+            {marqueeRow2Doubled.map((item, i) => (
               <div className="marquee-card" key={`r2-${i}`}>
                 <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
               </div>
@@ -350,7 +363,7 @@ function HomePage() {
       {/* ===== FOOD STRIP ===== */}
       <section className="food-strip">
         <div className="food-strip-inner">
-          {[...foodOnlyItems, ...foodOnlyItems].map((item, i) => (
+          {foodStripDoubled.map((item, i) => (
             <div className="food-strip-item" key={i}>
               <span className="food-img">
                 <img src={item.image} alt={item.name} loading="lazy" decoding="async" />

@@ -101,6 +101,14 @@ function EntreprisePage() {
 
   return (
     <div className="entreprise-page">
+      <title>Food Trucks pour Entreprises - Événements Corporate | Foodmoov</title>
+      <meta name="description" content="Organisez vos événements d'entreprise avec des food trucks : team building, séminaires, pauses déjeuner. Demandez un devis gratuit sur Foodmoov." />
+      <meta property="og:title" content="Food Trucks pour Entreprises - Événements Corporate | Foodmoov" />
+      <meta property="og:description" content="Organisez vos événements d'entreprise avec des food trucks de qualité. Team building, séminaires, pauses déjeuner." />
+      <meta property="og:url" content="https://foodmoov.com/entreprise" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/entreprise" />
       {/* Hero Section */}
       <section className="entreprise-hero">
         <div className="hero-content" data-aos="fade-up">

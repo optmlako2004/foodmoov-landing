@@ -104,6 +104,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Espace Client -->
+  <url>
+    <loc>https://foodmoov.com/espace-client</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Influenceurs -->
   <url>
     <loc>https://foodmoov.com/influenceurs</loc>
@@ -116,6 +124,12 @@
     <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://foodmoov.com/demander-influenceur</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Blog -->

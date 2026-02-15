@@ -18,6 +18,14 @@ function ApplicationsPage() {
 
   return (
     <div className="applications-page">
+      <title>Télécharger les Applications Foodmoov | Foodmoov</title>
+      <meta name="description" content="Téléchargez Foodmood pour trouver des food trucks ou Foodmoov Driver pour gérer votre activité de food trucker. Disponible sur App Store et Google Play." />
+      <meta property="og:title" content="Télécharger les Applications Foodmoov" />
+      <meta property="og:description" content="Téléchargez Foodmood pour trouver des food trucks ou Foodmoov Driver pour gérer votre activité. Disponible sur iOS et Android." />
+      <meta property="og:url" content="https://foodmoov.com/applications" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/applications" />
       <div className="apps-hero">
         <h1>Télécharger Foodmoov</h1>
         <p>Choisissez l'application adaptée à vos besoins</p>

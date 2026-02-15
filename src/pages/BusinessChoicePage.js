@@ -6,6 +6,14 @@ import "./BusinessChoicePage.css";
 function BusinessChoicePage() {
   return (
     <div className="business-choice-page">
+      <title>Foodmoov for Business - Entreprises et Collectivités | Foodmoov</title>
+      <meta name="description" content="Foodmoov for Business : solutions food truck pour entreprises privées et collectivités. Team building, séminaires, marchés et événements publics." />
+      <meta property="og:title" content="Foodmoov for Business - Entreprises et Collectivités | Foodmoov" />
+      <meta property="og:description" content="Solutions food truck pour entreprises privées et collectivités. Team building, séminaires, marchés et événements publics." />
+      <meta property="og:url" content="https://foodmoov.com/business" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/business" />
       <div className="business-choice-container">
         <h1>Foodmoov for <span>Business</span></h1>
         <p>Choisissez votre type de structure pour découvrir nos solutions adaptées.</p>

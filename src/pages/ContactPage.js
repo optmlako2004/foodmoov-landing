@@ -37,6 +37,14 @@ function ContactPage() {
 
   return (
     <div className="contact-landing">
+      <title>Contactez-nous | Foodmoov</title>
+      <meta name="description" content="Contactez l'équipe Foodmoov par email ou formulaire. Question, suggestion, partenariat ou support technique, nous répondons sous 24-48h." />
+      <meta property="og:title" content="Contactez-nous | Foodmoov" />
+      <meta property="og:description" content="Contactez l'équipe Foodmoov. Question, suggestion, partenariat ou support technique, nous sommes là pour vous." />
+      <meta property="og:url" content="https://foodmoov.com/contact" />
+      <meta property="og:image" content="https://foodmoov.com/logo.png" />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://foodmoov.com/contact" />
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="contact-hero-content">
@@ -107,6 +115,7 @@ function ContactPage() {
                     required
                     placeholder="Votre nom"
                     disabled={isLoading}
+                    aria-describedby={status.type === "error" ? "contact-form-status" : undefined}
                   />
                 </div>
                 <div className="form-group">
@@ -120,6 +129,7 @@ function ContactPage() {
                     required
                     placeholder="votre@email.com"
                     disabled={isLoading}
+                    aria-describedby={status.type === "error" ? "contact-form-status" : undefined}
                   />
                 </div>
               </div>
@@ -133,6 +143,7 @@ function ContactPage() {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
+                  aria-describedby={status.type === "error" ? "contact-form-status" : undefined}
                 >
                   <option value="">Sélectionnez un sujet</option>
                   <option value="question">Question générale</option>
@@ -155,11 +166,12 @@ function ContactPage() {
                   placeholder="Décrivez votre demande..."
                   rows={6}
                   disabled={isLoading}
+                  aria-describedby={status.type === "error" ? "contact-form-status" : undefined}
                 />
               </div>
 
               {status.message && (
-                <div className={`form-status ${status.type}`}>
+                <div id="contact-form-status" className={`form-status ${status.type}`} role="alert">
                   {status.type === "success" && <FaCheck />}
                   {status.message}
                 </div>
