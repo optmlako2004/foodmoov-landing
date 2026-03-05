@@ -401,11 +401,30 @@ function HomePage() {
               <p>Du team building aux événements corporate, nous avons la solution food truck pour tous vos événements professionnels.</p>
               <Link to="/business" className="audience-link">En savoir plus <FaArrowRight /></Link>
             </div>
-            <div className="audience-card">
-              <div className="audience-icon"><FaHandshake /></div>
-              <h3>Devenir partenaire ou influenceur</h3>
-              <p>Vous souhaitez collaborer avec Foodmoov ? Rejoignez notre réseau de partenaires ou notre programme influenceurs.</p>
-              <Link to="/rejoindre" className="audience-link">Nous rejoindre <FaArrowRight /></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INFLUENCEURS & PARTENAIRES ===== */}
+      <section className="collab-section">
+        <div className="container">
+          <div className="collab-header">
+            <span className="section-tag">Collaborons ensemble</span>
+            <h2>Influenceurs & Partenaires</h2>
+            <p>Rejoignez l'aventure Foodmoov et participez à la révolution street-food.</p>
+          </div>
+          <div className="collab-grid">
+            <div className="collab-card">
+              <div className="collab-icon"><FaShareAlt /></div>
+              <h3>Devenir influenceur</h3>
+              <p>Partagez votre passion pour la street-food et rejoignez notre programme influenceurs pour des collaborations exclusives.</p>
+              <Link to="/devenir-influenceur" className="collab-link">Rejoindre le programme <FaArrowRight /></Link>
+            </div>
+            <div className="collab-card">
+              <div className="collab-icon"><FaHandshake /></div>
+              <h3>Devenir partenaire</h3>
+              <p>Vous souhaitez collaborer avec Foodmoov ? Rejoignez notre réseau de partenaires et développons ensemble la street-food.</p>
+              <Link to="/rejoindre" className="collab-link">Nous rejoindre <FaArrowRight /></Link>
             </div>
           </div>
         </div>
